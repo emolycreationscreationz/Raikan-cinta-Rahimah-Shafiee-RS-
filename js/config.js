@@ -74,6 +74,7 @@ window.MAJLIS = {
 
   // --- Muzik latar (fail MP3 dalam assets/music/) ---
   muzik: "assets/music/river-flows-in-you.mp3",   // Yiruma - River Flows In You
+  muzikMula: 75.3,   // saat mula lagu (1:15 = tema utama kembali); 0 = dari awal
 
   // --- RSVP & Guest Book (Google Sheets) ---
   // Tampal URL Web App Google Apps Script di sini. Kosong = mod demo.

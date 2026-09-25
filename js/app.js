@@ -100,16 +100,16 @@
       var m = $('#bukaJemputan').getBoundingClientRect();
       semburKelopak(m.left + m.width / 2, m.top + m.height / 2);
       s.classList.add('tekan');
-      lepas('buka', 200);          // kepak terangkat bersama meterai
-      lepas('masuk', 1100);        // sampul pudar ke muka depan
+      lepas('buka', 380);          // kepak terangkat bersama meterai
+      lepas('masuk', 2050);        // sampul pudar ke muka depan
       setTimeout(function () {
         document.body.classList.remove('terkunci');
         window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
         $('#muka').classList.add('muncul');
         if (videoMuka) { try { videoMuka.currentTime = 0; } catch (e2) {} videoMuka.play().catch(function () {}); }
         kelopakAmbien = true;
-      }, 1100 * cepat);
-      setTimeout(function () { s.remove(); }, 2300 * cepat);
+      }, 2050 * cepat);
+      setTimeout(function () { s.remove(); }, 3700 * cepat);
     }
     s.addEventListener('click', buka);
   }
@@ -214,25 +214,41 @@
     });
   }
 
-  /* ---------- Muzik ---------- */
-  var lagu, btnMuzik;
+  /* ---------- Muzik (tiada butang; main bila sampul dibuka) ---------- */
+  var lagu, laguMula = false;
   function mainMuzik() {
-    if (!C.muzik) return;
-    lagu.play().then(function () { btnMuzik.classList.add('main'); btnMuzik.setAttribute('aria-pressed', 'true'); })
-      .catch(function () {});
+    if (!C.muzik || !lagu) return;
+    var pertama = !laguMula;
+    laguMula = true;
+    if (pertama) {
+      // mula dari tengah lagu, naikkan kelantangan perlahan-lahan
+      var mula = Number(C.muzikMula) || 0;
+      if (mula) { try { lagu.currentTime = mula; } catch (e) {} }
+      lagu.volume = 0;
+    }
+    lagu.play().then(function () {
+      if (!pertama) return;
+      var t0 = performance.now();
+      (function naik(t) {
+        var k = Math.min(1, (t - t0) / 1800);
+        try { lagu.volume = k; } catch (e) {}
+        if (k < 1) requestAnimationFrame(naik);
+      })(t0);
+    }).catch(function () {});
   }
   function muzik() {
-    lagu = $('#lagu'); btnMuzik = $('#btnMuzik');
-    if (!C.muzik) { btnMuzik.hidden = true; return; }
-    lagu.src = C.muzik;
-    lagu.addEventListener('error', function () { btnMuzik.hidden = true; });
-    btnMuzik.addEventListener('click', function () {
-      if (lagu.paused) mainMuzik();
-      else { lagu.pause(); btnMuzik.classList.remove('main'); btnMuzik.setAttribute('aria-pressed', 'false'); }
+    lagu = $('#lagu');
+    if (!C.muzik) return;
+    var mula = Number(C.muzikMula) || 0;
+    // #t= memastikan pelayar (termasuk Safari) mula di titik yang sama
+    lagu.src = C.muzik + (mula ? '#t=' + mula : '');
+    lagu.addEventListener('loadedmetadata', function () {
+      if (laguMula && mula && lagu.currentTime < 1) { try { lagu.currentTime = mula; } catch (e) {} }
     });
+    // jeda sendiri bila tetamu tukar ke aplikasi lain, sambung bila kembali
     document.addEventListener('visibilitychange', function () {
       if (document.hidden && !lagu.paused) { lagu.pause(); lagu._auto = true; }
-      else if (!document.hidden && lagu._auto) { lagu._auto = false; mainMuzik(); }
+      else if (!document.hidden && lagu._auto) { lagu._auto = false; lagu.play().catch(function () {}); }
     });
   }
 
