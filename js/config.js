@@ -72,8 +72,8 @@ window.MAJLIS = {
   heroVideoWebm: "assets/video/pengantin.webm",   // sandaran untuk pelayar tanpa MP4
   heroPoster: "assets/video/pengantin-poster.jpg",
 
-  // --- Muzik latar (letak fail MP3 di assets/music/lagu.mp3) ---
-  muzik: "assets/music/Yiruma - River Flows In You (Visualizer).mp3",
+  // --- Muzik latar (fail MP3 dalam assets/music/) ---
+  muzik: "assets/music/river-flows-in-you.mp3",   // Yiruma - River Flows In You
 
   // --- RSVP & Guest Book (Google Sheets) ---
   // Tampal URL Web App Google Apps Script di sini. Kosong = mod demo.
