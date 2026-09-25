@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,700&family=Outfit:wght@300;400;500&family=Playball&display=swap">
-<link rel="stylesheet" href="css/style.css?v=20260925c">
+<link rel="stylesheet" href="css/style.css?v=20260925d">
 </head>
 <body class="terkunci">
 
@@ -296,6 +296,22 @@
       <use href="#melur" transform="translate(24 -6) scale(.7)"/>
     </symbol>
 
+    <!-- Hiasan tengah pembahagi songket: bunga raya emas simetri -->
+    <symbol id="pusatSongket" viewBox="-72 -30 144 60" overflow="visible">
+      <g id="pusatSisi">
+        <path d="M-12 1C-26 -1 -38 -9 -44 -3C-49 3 -43 9 -38 5C-35 2 -38 -1 -41 1" fill="none" stroke="url(#emas)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M-10 6C-24 12 -44 14 -58 6" fill="none" stroke="url(#emas)" stroke-width=".9" stroke-linecap="round"/>
+        <use href="#daunM" transform="translate(-8 1) rotate(186) scale(.95)"/>
+        <use href="#daunM" transform="translate(-9 -5) rotate(208) scale(.75)"/>
+        <use href="#daunM" transform="translate(-8 7) rotate(158) scale(.75)"/>
+        <use href="#melur" transform="translate(-30 7) scale(.95)"/>
+        <use href="#melur" transform="translate(-49 -8) scale(.6)"/>
+        <use href="#kuntum" transform="translate(-60 6) rotate(-100) scale(.9)"/>
+        <use href="#kuntum" transform="translate(-22 -10) rotate(-50) scale(.7)"/>
+      </g>
+      <use href="#pusatSisi" transform="scale(-1 1)"/>
+      <use href="#bungaRaya" transform="rotate(12) scale(.92)"/>
+    </symbol>
     <!-- ikon -->
     <symbol id="i-telefon" viewBox="0 0 24 24"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
     <symbol id="i-lokasi" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
@@ -652,7 +668,7 @@
 
   <div class="pembahagi" aria-hidden="true">
     <span class="songket"></span>
-    <svg class="bunga-malay pembahagi__bunga" viewBox="-40 -30 80 50"><use href="#semak" x="-40" y="-30" width="80" height="50"/></svg>
+    <svg class="bunga-malay pembahagi__bunga" viewBox="-72 -30 144 60"><use href="#pusatSongket" x="-72" y="-30" width="144" height="60"/></svg>
   </div>
 
   <!-- ============ Jemputan dalam gerbang ============ -->
@@ -721,7 +737,7 @@
 
   <div class="pembahagi" aria-hidden="true">
     <span class="songket"></span>
-    <svg class="bunga-malay pembahagi__bunga" viewBox="-40 -30 80 50"><use href="#semak" x="-40" y="-30" width="80" height="50"/></svg>
+    <svg class="bunga-malay pembahagi__bunga" viewBox="-72 -30 144 60"><use href="#pusatSongket" x="-72" y="-30" width="144" height="60"/></svg>
   </div>
 
   <!-- ============ Doa ============ -->
@@ -751,7 +767,7 @@
 
   <div class="pembahagi" aria-hidden="true">
     <span class="songket"></span>
-    <svg class="bunga-malay pembahagi__bunga" viewBox="-40 -30 80 50"><use href="#semak" x="-40" y="-30" width="80" height="50"/></svg>
+    <svg class="bunga-malay pembahagi__bunga" viewBox="-72 -30 144 60"><use href="#pusatSongket" x="-72" y="-30" width="144" height="60"/></svg>
   </div>
 
   <!-- ============ RSVP ============ -->
@@ -879,7 +895,7 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="js/config.js?v=20260925c"></script>
-<script src="js/app.js?v=20260925c"></script>
+<script src="js/config.js?v=20260925d"></script>
+<script src="js/app.js?v=20260925d"></script>
 </body>
 </html>
