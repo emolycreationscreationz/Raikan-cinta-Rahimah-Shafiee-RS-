@@ -766,9 +766,21 @@
 
   <!-- ============ RSVP ============ -->
   <section class="seksyen rsvp" id="rsvp">
-    <h2 class="tajuk-skrip reveal">RSVP</h2>
-    <p class="rsvp__teks reveal">Kehadiran dan doa restu Tuan/Puan amat kami hargai. Mohon sahkan kehadiran anda.</p>
-    <button type="button" class="btn-pil reveal" data-buka="modalRsvp">ISI RSVP &amp; UCAPAN</button>
+    <div class="kad-balas reveal">
+      <svg class="bunga-malay kad-balas__bunga kad-balas__bunga--kiri" viewBox="0 0 260 220" aria-hidden="true"><use href="#karangan" width="260" height="220"/></svg>
+      <svg class="bunga-malay kad-balas__bunga kad-balas__bunga--kanan" viewBox="0 0 260 220" aria-hidden="true"><g transform="translate(260 0) scale(-1 1)"><use href="#karangan" width="260" height="220"/></g></svg>
+      <div class="kad-balas__dalam">
+        <p class="kad-balas__kecil">Sudi kiranya</p>
+        <h2 class="kad-balas__tajuk">RSVP</h2>
+        <svg class="kad-balas__ranting" viewBox="0 0 140 34" aria-hidden="true"><use href="#sprig" width="140" height="34"/></svg>
+        <p class="kad-balas__teks">Kehadiran dan doa restu Tuan/Puan amat kami hargai. Mohon sahkan kehadiran anda.</p>
+        <button type="button" class="btn-balas" data-buka="modalRsvp">
+          <svg aria-hidden="true"><use href="#i-rsvp"/></svg>
+          Isi RSVP &amp; Ucapan
+        </button>
+        <span class="lilin-kecil" aria-hidden="true">RS</span>
+      </div>
+    </div>
   </section>
 
   <!-- ============ Guest Book ============ -->
@@ -786,14 +798,28 @@
   </section>
 
   <!-- ============ Penutup ============ -->
-  <section class="seksyen penutup">
-    <svg class="bunga-malay penutup__bunga penutup__bunga--kiri" viewBox="0 0 260 220" aria-hidden="true"><g transform="translate(0 220) scale(1 -1)"><use href="#karangan" width="260" height="220"/></g></svg>
-    <svg class="bunga-malay penutup__bunga penutup__bunga--kanan" viewBox="0 0 260 220" aria-hidden="true"><g transform="translate(260 220) scale(-1 -1)"><use href="#karangan" width="260" height="220"/></g></svg>
-    <p class="penutup__teks reveal" data-f="penutup"></p>
+  <section class="seksyen penutup" id="penutup">
+    <div class="debu" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <svg class="penutup__mahkota reveal" viewBox="-92 -8 184 62" aria-hidden="true"><use href="#mahkota" x="-92" y="-8" width="184" height="62"/></svg>
     <p class="penutup__terima reveal" data-f="terimaKasih"></p>
-    <svg class="ranting reveal" viewBox="0 0 140 34" aria-hidden="true"><use href="#sprig" width="140" height="34"/></svg>
-    <p class="penutup__direka reveal">Direka Oleh</p>
-    <p class="penutup__jenama reveal" data-f="direkaOleh"></p>
+    <p class="penutup__teks reveal" data-f="penutup"></p>
+
+    <figure class="penutup__gambar reveal">
+      <img src="assets/photos/foto-4.webp" width="1280" height="853" loading="lazy" decoding="async" alt="Rahimah dan Shafiee berdiri di hadapan pelamin">
+      <svg class="bunga-malay penutup__bunga penutup__bunga--kiri" viewBox="0 0 260 220" aria-hidden="true"><g transform="translate(0 220) scale(1 -1)"><use href="#karangan" width="260" height="220"/></g></svg>
+      <svg class="bunga-malay penutup__bunga penutup__bunga--kanan" viewBox="0 0 260 220" aria-hidden="true"><g transform="translate(260 220) scale(-1 -1)"><use href="#karangan" width="260" height="220"/></g></svg>
+    </figure>
+
+    <p class="penutup__nama reveal" data-f="pasanganPendek"></p>
+    <p class="penutup__tarikh reveal" data-f="tarikhSampul"></p>
+    <span class="lilin-besar reveal" aria-hidden="true">RS</span>
+
+    <footer class="penutup__kaki reveal">
+      <span class="penutup__garis" aria-hidden="true"></span>
+      <p class="penutup__direka">Direka Oleh</p>
+      <p class="penutup__jenama" data-f="direkaOleh"></p>
+      <p class="penutup__hashtag" data-f="hashtag"></p>
+    </footer>
   </section>
 </main>
 
