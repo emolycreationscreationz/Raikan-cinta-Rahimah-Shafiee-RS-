@@ -135,7 +135,8 @@
       media.appendChild(debu);
       var jendela = el('div', 'hero__jendela');
       jendela.appendChild(v);
-      media.appendChild(jendela);
+      // selepas teks (bukan di lapisan latar) supaya sentiasa di bawah tarikh
+      $('.hero__langit').insertAdjacentElement('afterend', jendela);
       videoMuka = v;
       // Jika tiada sampul (cth. dibuka semula), terus main
       if (!$('#sampul')) v.play().catch(function () {});
