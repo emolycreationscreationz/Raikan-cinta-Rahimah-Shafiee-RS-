@@ -30,7 +30,7 @@ nombor hubungi, muzik dan URL RSVP semua di situ.
 ## Video muka depan
 
 `assets/video/pengantin.mp4` (+ `.webm` sandaran) ialah video pengantin berjalan dalam format potret,
-sudah digred warna emas-coklat dan dicantum dengan latar kabur supaya menyatu dengan halaman.
+sudah digred warna emas-coklat. Ia dipaparkan dalam tingkap gerbang emas di atas latar baldu coklat.
 Video bermula dari awal sebaik sampul dibuka. Gambar `pengantin-poster.jpg` dipaparkan sementara video dimuatkan.
 Untuk tukar video, ganti fail tersebut dan kemas kini `heroVideo` / `heroVideoWebm` / `heroPoster` dalam `js/config.js`.
 Kosongkan `heroVideo` untuk kembali ke animasi lukisan.

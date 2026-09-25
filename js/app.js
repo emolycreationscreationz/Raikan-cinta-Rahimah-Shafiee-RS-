@@ -133,7 +133,13 @@
         v.appendChild(so);
       });
       media.textContent = '';
-      media.appendChild(v);
+      media.classList.add('hero__media--video');
+      var debu = el('div', 'debu');
+      for (var d = 0; d < 12; d++) debu.appendChild(el('i'));
+      media.appendChild(debu);
+      var jendela = el('div', 'hero__jendela');
+      jendela.appendChild(v);
+      media.appendChild(jendela);
       videoMuka = v;
       // Jika tiada sampul (cth. dibuka semula), terus main
       if (!$('#sampul')) v.play().catch(function () {});
