@@ -59,9 +59,8 @@ window.MAJLIS = {
   // --- Hubungi (PLACEHOLDER — tukar kepada nama & nombor sebenar) ---
   // telefon: format antarabangsa tanpa + atau sengkang, contoh 60123456789
   hubungi: [
-    { nama: "Nama Waris 1", peranan: "Bapa Pengantin", telefon: "60120000000" },
-    { nama: "Nama Waris 2", peranan: "Ibu Pengantin", telefon: "60120000000" },
-    { nama: "Nama Waris 3", peranan: "Adik-beradik Pengantin", telefon: "60120000000" }
+    { nama: "Bazlaa", telefon: "+6011-61216141" },
+    { nama: "Ruziah", telefon: "+6014-6665827" },
   ],
 
   // --- Muzik latar (letak fail MP3 di assets/music/lagu.mp3) ---
