@@ -25,6 +25,7 @@ window.MAJLIS = {
   tarikhSampul: "31 · 10 · 2026",          // tarikh kecil pada sampul surat
   // Masa mula majlis untuk kiraan detik (waktu Malaysia, +08:00)
   tarikhMula: "2026-10-31T11:30:00+08:00",
+  tarikhTamat: "2026-10-31T15:30:00+08:00",   // untuk butang "Simpan Tarikh"
   masa: "11:30 AM - 3:30 PM",
   aturcara: [
     { label: "Bersanding", masa: "12:30 PM" }

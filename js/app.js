@@ -30,12 +30,42 @@
     if (t.mapsUrl) $('#lnkMaps').href = t.mapsUrl; else $('#lnkMaps').hidden = true;
     if (t.wazeUrl) { $('#lnkWaze').href = t.wazeUrl; $('#lnkWaze').hidden = false; }
 
-    var ul = $('#aturcara');
-    (C.aturcara || []).forEach(function (a) {
-      var li = el('li');
-      li.appendChild(el('span', 'label', a.label));
-      li.appendChild(el('span', 'jam', a.masa));
-      ul.appendChild(li);
+    if (t.mapsUrl) $('#lnkMaps2').href = t.mapsUrl; else $('#lnkMaps2').hidden = true;
+
+    // Tarikh besar: SABTU | 31 | OKTOBER 2026
+    var mula = new Date(C.tarikhMula);
+    if (!isNaN(mula)) {
+      var zon = { timeZone: 'Asia/Kuala_Lumpur' };
+      function f(o) { try { return new Intl.DateTimeFormat('ms-MY', Object.assign({}, zon, o)).format(mula); } catch (e) { return ''; } }
+      $('#tHari').textContent = f({ weekday: 'long' });
+      $('#tNombor').textContent = f({ day: 'numeric' });
+      $('#tBulan').textContent = f({ month: 'long' });
+      $('#tTahun').textContent = f({ year: 'numeric' });
+      // Pautan Google Calendar
+      var tamat = new Date(C.tarikhTamat || mula.getTime() + 4 * 3600e3);
+      function utc(d) { return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''); }
+      var tajukAcara = 'Walimatul Urus ' + (C.pengantinPerempuan || '') + ' & ' + (C.pengantinLelaki || '');
+      $('#lnkKalendar').href = 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
+        '&text=' + encodeURIComponent(tajukAcara) +
+        '&dates=' + utc(mula) + '/' + utc(tamat) +
+        '&location=' + encodeURIComponent([t.nama, t.alamat].filter(Boolean).join(', ')) +
+        '&details=' + encodeURIComponent((C.mapsUrl || t.mapsUrl || ''));
+    } else {
+      $('#lnkKalendar').hidden = true;
+    }
+
+    // Aturcara: baris pertama dalam kad, semua dalam kapsyen pelamin
+    var at = C.aturcara || [];
+    if (at[0]) {
+      var br = $('#barisAturcara');
+      br.innerHTML = '<svg class="acara__ikon" aria-hidden="true"><use href="#i-rsvp"/></svg>';
+      br.appendChild(el('dt', null, at[0].label));
+      br.appendChild(el('dd', null, at[0].masa));
+    }
+    var cap = $('#captionAturcara');
+    at.forEach(function (a) {
+      cap.appendChild(el('span', 'label', a.label));
+      cap.appendChild(el('span', 'jam', a.masa));
     });
 
     var doa = $('#doaTeks');
@@ -65,19 +95,27 @@
   /* ---------- Sampul surat pembuka ---------- */
   function sampul() {
     var s = $('#sampul'), dibuka = false;
-    function buka() {
-      if (dibuka) return;
+    var cepat = kurangGerak ? 0.02 : 1;
+    function lepas(nama, ms) { setTimeout(function () { s.classList.add(nama); }, ms * cepat); }
+    function buka(e) {
+      if (dibuka || (e && e.target.closest && e.target.closest('.bunga-malay'))) return;
       dibuka = true;
-      s.classList.add('buka');
       mainMuzik();
-      var t1 = kurangGerak ? 0 : 1150, t2 = kurangGerak ? 50 : 2200;
+      var m = $('#bukaJemputan').getBoundingClientRect();
+      semburKelopak(m.left + m.width / 2, m.top + m.height / 2);
+      s.classList.add('tekan');
+      lepas('buka', 260);          // kepak terbuka
+      lepas('kepak-bawah', 820);   // kepak lepas 90°, ke belakang kad
+      lepas('keluar', 1250);       // kad naik keluar
+      lepas('masuk', 2450);        // sampul turun, bunga keluar
       setTimeout(function () {
-        s.classList.add('hilang');
         document.body.classList.remove('terkunci');
         window.scrollTo(0, 0);
+        $('#muka').classList.add('muncul');
+        s.classList.add('hilang');
         kelopakAmbien = true;
-      }, t1);
-      setTimeout(function () { s.remove(); }, t2);
+      }, 2750 * cepat);
+      setTimeout(function () { s.remove(); }, 3700 * cepat);
     }
     s.addEventListener('click', buka);
   }
@@ -105,7 +143,16 @@
       var u = document.createElementNS(NS, 'use');
       u.setAttribute('href', '#manggar');
       baris.appendChild(u);
-      tiang.push({ el: u, kiri: i % 2 === 0, fasa: Math.floor(i / 2) / NT });
+      tiang.push({ el: u, kiri: i % 2 === 0, fasa: Math.floor(i / 2) / NT, jarak: 6, jenis: 'tiang' });
+    }
+    // semak bunga di antara tiang manggar
+    for (i = 0; i < NT * 2; i++) {
+      var sb = document.createElementNS(NS, 'use');
+      sb.setAttribute('href', '#semak');
+      sb.setAttribute('width', '80'); sb.setAttribute('height', '50');
+      sb.setAttribute('x', '-40'); sb.setAttribute('y', '-30');
+      baris.appendChild(sb);
+      tiang.push({ el: sb, kiri: i % 2 === 0, fasa: (Math.floor(i / 2) + 0.5) / NT, jarak: 14, jenis: 'semak' });
     }
     for (i = 0; i < NJ; i++) {
       var l = document.createElementNS(NS, 'line');
@@ -118,13 +165,15 @@
       tiang.forEach(function (p) {
         var t = (p.fasa + k) % 1, z = t * t;
         var y = UFUK + z * 420;
-        var sk = 0.05 + 1.1 * z;
-        var x = 200 + (p.kiri ? -1 : 1) * (sisi(Math.min(y, BAWAH)) + 6 + 26 * z);
+        var sk = (p.jenis === 'semak' ? 0.04 + 0.95 * z : 0.05 + 1.1 * z);
+        var x = 200 + (p.kiri ? -1 : 1) * (sisi(Math.min(y, BAWAH)) + p.jarak + (p.jenis === 'semak' ? 30 : 26) * z);
         p.el.setAttribute('transform', 'translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ') scale(' + sk.toFixed(3) + ')');
         p.el.setAttribute('opacity', Math.min(1, t * 8).toFixed(2));
         p.z = z;
       });
-      tiang.slice().sort(function (a, b) { return a.z - b.z; }).forEach(function (p) { baris.appendChild(p.el); });
+      var tertib = tiang.slice().sort(function (a, b) { return a.z - b.z; });
+      var kunci = tertib.map(function (p) { return tiang.indexOf(p); }).join(',');
+      if (kunci !== letak.kunci) { letak.kunci = kunci; tertib.forEach(function (p) { baris.appendChild(p.el); }); }
       jalur.forEach(function (j) {
         var t = (j.fasa + k) % 1, z = t * t;
         var y = UFUK + z * (BAWAH - UFUK), w = sisi(y) - 2;
@@ -326,8 +375,6 @@
   }
 
   function papar(data) {
-    $('#kiraHadir').textContent = data.hadir;
-    $('#kiraTidak').textContent = data.tidakHadir;
     var box = $('#senaraiUcapan');
     box.textContent = '';
     if (!data.ucapan || !data.ucapan.length) {
