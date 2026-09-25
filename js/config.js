@@ -78,7 +78,7 @@ window.MAJLIS = {
 
   // --- RSVP & Guest Book (Google Sheets) ---
   // Tampal URL Web App Google Apps Script di sini. Kosong = mod demo.
-  rsvpApiUrl: "",
+  rsvpApiUrl: "https://script.google.com/macros/s/AKfycbxqj4dSXyB5e9DurHgNYYFokuEBXlGY0qS1y1fG__vmLkvX-yViJSQWf0HRy1ro4UY7Mg/exec",
   maksPax: 10,
 
   // --- Penutup ---

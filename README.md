@@ -20,8 +20,7 @@ google-apps-script/Code.gs  backend RSVP & Guest Book (Google Sheets)
 Buka `js/config.js`. Nama, tarikh, lokasi, doa, hashtag, gambar galeri,
 nombor hubungi, muzik dan URL RSVP semua di situ.
 
-- **Hubungi**: masih placeholder (`Nama Waris 1`, `60120000000`). Tukar kepada nama & nombor sebenar
-  (format `60123456789`, tanpa `+`).
+- **Hubungi**: nama & nombor dalam `hubungi` (format bebas, contoh `+6011-61216141`).
 - **Kiraan detik**: `tarikhMula` dalam format `2026-10-31T11:30:00+08:00`.
 - **Gambar**: letak fail dalam `assets/photos/`, tambah dalam `galeri`. `fokus` menentukan bahagian
   gambar yang ditunjukkan bila dipotong (contoh `"50% 30%"`).
