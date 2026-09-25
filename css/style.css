@@ -111,26 +111,6 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .sampul__bunga--tl { top: -14px; left: -18px; width: 48%; transform-origin: 0 0; }
 .sampul__bunga--tr { top: -14px; right: -18px; width: 48%; transform-origin: 100% 0; }
 
-.sampul__tulisan {
-  position: absolute; left: 0; right: 0; top: 60%;
-  display: grid; justify-items: center; gap: 6px;
-  text-align: center;
-  color: #d0ad69;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, .7), 0 -1px 0 rgba(255, 225, 160, .12);
-  transition: opacity .5s ease;
-}
-.sampul__tulisan p { margin: 0; }
-.sampul__kecil { font: 600 10.5px/1.4 var(--f-hiasan); letter-spacing: .34em; padding-left: .34em; text-transform: uppercase; opacity: .9; }
-.sampul__nama { font: 400 36px/1.2 var(--f-skrip); color: #e3c47f; }
-.sampul__hint {
-  position: absolute; left: 0; right: 0; bottom: calc(21% + var(--selamat-bawah));
-  margin: 0; text-align: center;
-  font: 400 10.5px/1 var(--f-hiasan); letter-spacing: .3em; text-transform: uppercase;
-  color: var(--emas-muda); opacity: .75;
-  animation: kelip 2.4s ease-in-out infinite;
-  transition: opacity .4s ease;
-}
-.sampul.buka .sampul__hint { animation: none; opacity: 0; }
 @keyframes kelip { 50% { opacity: .3; } }
 
 .sampul__debu { position: absolute; inset: 0; pointer-events: none; }
