@@ -54,7 +54,7 @@
       $('#lnkKalendar').hidden = true;
     }
 
-    // Aturcara: baris pertama dalam kad, semua dalam kapsyen pelamin
+    // Aturcara: baris pertama dalam kad majlis
     var at = C.aturcara || [];
     if (at[0]) {
       var br = $('#barisAturcara');
@@ -62,11 +62,6 @@
       br.appendChild(el('dt', null, at[0].label));
       br.appendChild(el('dd', null, at[0].masa));
     }
-    var cap = $('#captionAturcara');
-    at.forEach(function (a) {
-      cap.appendChild(el('span', 'label', a.label));
-      cap.appendChild(el('span', 'jam', a.masa));
-    });
 
     var doa = $('#doaTeks');
     (C.doa || []).forEach(function (baris) { doa.appendChild(el('p', null, baris)); });

@@ -566,18 +566,6 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .btn-emas svg { width: 16px; height: 16px; }
 .btn-emas--garis { background: transparent; color: var(--emas-muda); border: 1px solid rgba(236, 212, 154, .7); box-shadow: none; }
 
-.pelamin-bingkai { position: relative; margin: 0; width: 100%; display: grid; justify-items: center; gap: 12px; }
-.pelamin {
-  display: block;
-  width: 100%; height: auto; aspect-ratio: 900 / 966; object-fit: cover;
-  background: #2a190d;
-  border: 1.5px solid rgba(212, 176, 103, .9);
-  border-radius: 50% 50% 8px 8px / 120px 120px 8px 8px;
-  box-shadow: 0 0 0 5px rgba(26, 15, 9, .9), 0 0 0 6px rgba(201, 164, 92, .5), 0 22px 44px rgba(0, 0, 0, .6);
-}
-.pelamin-bingkai figcaption { display: grid; justify-items: center; }
-.pelamin-bingkai figcaption .label { font: 400 30px/1.2 var(--f-skrip); color: #f6dfa3; }
-.pelamin-bingkai figcaption .jam { font: 500 15px/1.4 var(--f-badan); letter-spacing: .1em; }
 
 /* ---------- Kad emas (doa & guest book) ---------- */
 .kad-emas {
