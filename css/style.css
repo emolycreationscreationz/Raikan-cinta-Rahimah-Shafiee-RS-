@@ -777,13 +777,14 @@ button { font: inherit; color: inherit; cursor: pointer; }
   position: fixed; inset: 0; z-index: 60;
   display: grid; place-items: center;
   padding: 16px;
-  background: rgba(8, 5, 3, .65);
-  -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+  background: rgba(8, 5, 3, .8);
   opacity: 0; visibility: hidden;
   transition: opacity .3s, visibility .3s;
 }
 .lapisan.aktif { opacity: 1; visibility: visible; }
 .lapisan--bawah { place-items: end center; padding: 0; }
+/* Borang RSVP di bahagian atas supaya papan kekunci tidak menolak halaman */
+#modalRsvp { place-items: start center; padding-top: calc(5vh + env(safe-area-inset-top, 0px)); overflow-y: auto; }
 
 .helaian, .dialog {
   background: linear-gradient(170deg, #f8eed6, #eddcb4);
@@ -831,6 +832,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   transition: transform .3s cubic-bezier(.2, .8, .2, 1);
 }
 .lapisan.aktif .dialog { transform: none; }
+.lapisan.aktif .dialog.borang { transition: none; }
 .dialog__x {
   position: absolute; top: 10px; right: 10px;
   width: 34px; height: 34px; padding: 7px;

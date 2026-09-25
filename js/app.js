@@ -314,11 +314,30 @@
   }
 
   /* ---------- Lapisan / dialog ---------- */
-  var terakhirFokus = null;
+  var terakhirFokus = null, yKunci = 0, terkunci = false;
+  // Bekukan halaman di belakang dialog. Ini elak pepijat iPhone (kursor
+  // muncul di bawah kotak input) bila papan kekunci menolak halaman.
+  function kunciHalaman(ya) {
+    var b = document.body, h = document.documentElement;
+    if (ya && !terkunci) {
+      terkunci = true;
+      yKunci = window.scrollY || h.scrollTop || 0;
+      h.style.scrollBehavior = 'auto';
+      b.style.position = 'fixed';
+      b.style.top = -yKunci + 'px';
+      b.style.left = '0'; b.style.right = '0'; b.style.width = '100%';
+    } else if (!ya && terkunci) {
+      terkunci = false;
+      b.style.position = ''; b.style.top = ''; b.style.left = ''; b.style.right = ''; b.style.width = '';
+      window.scrollTo({ top: yKunci, left: 0, behavior: 'instant' });
+      h.style.scrollBehavior = '';
+    }
+  }
   function buka(id) {
     var l = document.getElementById(id);
     if (!l) return;
     terakhirFokus = document.activeElement;
+    kunciHalaman(true);
     l.classList.add('aktif');
     // Elak papan kekunci telefon terbuka sendiri
     var sentuh = window.matchMedia && matchMedia('(pointer: coarse)').matches;
@@ -327,6 +346,9 @@
   }
   function tutup(l) {
     l.classList.remove('aktif');
+    var ae = document.activeElement;
+    if (ae && ae.blur && l.contains(ae)) ae.blur();
+    if (!$('.lapisan.aktif')) kunciHalaman(false);
     if (terakhirFokus && terakhirFokus.focus) terakhirFokus.focus({ preventScroll: true });
   }
   function lapisan() {
