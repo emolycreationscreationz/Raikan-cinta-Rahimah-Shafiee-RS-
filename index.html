@@ -12,97 +12,161 @@
 <meta property="og:image" content="assets/photos/foto-4.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,700&family=Outfit:wght@300;400;500&family=Playball&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,700&family=Outfit:wght@300;400;500&family=Playball&display=swap">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="terkunci">
 
-<!-- ============ SVG sprite: bunga emas, ranting, ikon ============ -->
+<!-- ============ SVG sprite: bunga Melayu, awan larat, ikon ============ -->
 <svg class="sprite" aria-hidden="true" focusable="false">
   <defs>
     <linearGradient id="emas" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f3dea0"/>
-      <stop offset=".5" stop-color="#c9a45c"/>
+      <stop offset="0" stop-color="#f6e2a6"/>
+      <stop offset=".45" stop-color="#d4b067"/>
       <stop offset="1" stop-color="#8a6a2e"/>
     </linearGradient>
-    <radialGradient id="emasBunga" cx=".5" cy=".5" r=".6">
-      <stop offset="0" stop-color="#fff1c8"/>
-      <stop offset=".5" stop-color="#dcbc72"/>
-      <stop offset="1" stop-color="#9c7a3c"/>
+    <radialGradient id="gRaya" cx="0" cy="0" r="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4a220b"/>
+      <stop offset=".22" stop-color="#8e5a24"/>
+      <stop offset=".6" stop-color="#d8b366"/>
+      <stop offset="1" stop-color="#f8e6ab"/>
     </radialGradient>
+    <linearGradient id="gKuntum" x1="0" y1="0" x2="0" y2="-13" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9a6f30"/>
+      <stop offset="1" stop-color="#f3dc9c"/>
+    </linearGradient>
 
-    <g id="blossom">
-      <g fill="url(#emasBunga)" stroke="#6e5022" stroke-width=".4">
-        <path d="M0 -1C-4 -4 -4.6 -9 0 -11C4.6 -9 4 -4 0 -1Z"/>
-        <path d="M0 -1C-4 -4 -4.6 -9 0 -11C4.6 -9 4 -4 0 -1Z" transform="rotate(72)"/>
-        <path d="M0 -1C-4 -4 -4.6 -9 0 -11C4.6 -9 4 -4 0 -1Z" transform="rotate(144)"/>
-        <path d="M0 -1C-4 -4 -4.6 -9 0 -11C4.6 -9 4 -4 0 -1Z" transform="rotate(216)"/>
-        <path d="M0 -1C-4 -4 -4.6 -9 0 -11C4.6 -9 4 -4 0 -1Z" transform="rotate(288)"/>
+    <!-- Bunga raya (hibiscus) -->
+    <g id="bungaRaya">
+      <g fill="url(#gRaya)" stroke="#5e3a14" stroke-width=".5">
+        <path id="kelopakRaya" d="M0 0C-7 -4 -13 -12 -12 -19C-11 -24 -6 -25 -3 -22C-1 -25 3 -25 5 -22C9 -25 13 -21 12 -17C11 -10 6 -4 0 0Z"/>
+        <use href="#kelopakRaya" transform="rotate(72)"/>
+        <use href="#kelopakRaya" transform="rotate(144)"/>
+        <use href="#kelopakRaya" transform="rotate(216)"/>
+        <use href="#kelopakRaya" transform="rotate(288)"/>
       </g>
-      <circle r="2.4" fill="#5e421a"/>
-      <circle r="1.1" fill="#f6e3a8"/>
+      <g fill="none" stroke="#5e3a14" stroke-width=".45" opacity=".55">
+        <path id="uratRaya" d="M0 -3V-20M0 -7L-6 -17M0 -7L6 -17"/>
+        <use href="#uratRaya" transform="rotate(72)"/>
+        <use href="#uratRaya" transform="rotate(144)"/>
+        <use href="#uratRaya" transform="rotate(216)"/>
+        <use href="#uratRaya" transform="rotate(288)"/>
+      </g>
+      <circle r="3.6" fill="#3d1c08"/>
+      <path d="M0 0C2 -10 4 -20 3 -31" fill="none" stroke="url(#emas)" stroke-width="1.5" stroke-linecap="round"/>
+      <g fill="#fff1c8" stroke="#8a6a2e" stroke-width=".3">
+        <circle cx="3" cy="-31" r="1.3"/><circle cx="5.2" cy="-28.5" r="1.1"/><circle cx="1" cy="-29" r="1.1"/><circle cx="4.5" cy="-33.5" r="1"/><circle cx="1.5" cy="-33" r="1"/>
+      </g>
     </g>
-    <g id="leaf">
-      <path d="M0 0C6 -7 16 -7 22 0C16 7 6 7 0 0Z" fill="url(#emas)" opacity=".9"/>
-      <path d="M1 0H20" stroke="#6e5022" stroke-width=".5" fill="none"/>
-    </g>
-    <g id="bud"><circle r="2.6" fill="url(#emasBunga)" stroke="#6e5022" stroke-width=".4"/></g>
 
-    <symbol id="spray" viewBox="0 0 220 280" overflow="visible">
-      <g fill="none" stroke="url(#emas)" stroke-width="2" stroke-linecap="round">
-        <path d="M-5 10C40 18 78 50 98 100C112 136 116 176 108 232"/>
-        <path d="M30 18C52 4 82 2 108 12" stroke-width="1.4"/>
-        <path d="M72 60C100 48 130 50 156 66" stroke-width="1.4"/>
-        <path d="M100 110C122 104 142 112 156 130" stroke-width="1.3"/>
-        <path d="M110 178C128 176 140 186 146 200" stroke-width="1.2"/>
-        <path d="M8 12C14 30 18 50 16 70" stroke-width="1.2"/>
+    <!-- Bunga melur (jasmine) -->
+    <g id="melur">
+      <g fill="#f7eed6" stroke="#b8913f" stroke-width=".4">
+        <path id="kelopakMelur" d="M0 -1C-2.2 -4 -2.4 -8 0 -10C2.4 -8 2.2 -4 0 -1Z"/>
+        <use href="#kelopakMelur" transform="rotate(60)"/>
+        <use href="#kelopakMelur" transform="rotate(120)"/>
+        <use href="#kelopakMelur" transform="rotate(180)"/>
+        <use href="#kelopakMelur" transform="rotate(240)"/>
+        <use href="#kelopakMelur" transform="rotate(300)"/>
       </g>
-      <use href="#leaf" transform="translate(40 20) rotate(-20)"/>
-      <use href="#leaf" transform="translate(62 38) rotate(35)"/>
-      <use href="#leaf" transform="translate(92 86) rotate(62)"/>
-      <use href="#leaf" transform="translate(106 142) rotate(100) scale(.9)"/>
-      <use href="#leaf" transform="translate(112 200) rotate(112) scale(.8)"/>
-      <use href="#leaf" transform="translate(92 8) rotate(-12) scale(.8)"/>
-      <use href="#leaf" transform="translate(116 56) rotate(-18) scale(.85)"/>
-      <use href="#leaf" transform="translate(132 114) rotate(12) scale(.8)"/>
-      <use href="#leaf" transform="translate(12 40) rotate(80) scale(.8)"/>
-      <use href="#bud" transform="translate(80 4)"/>
-      <use href="#bud" transform="translate(140 57)"/>
-      <use href="#bud" transform="translate(136 117) scale(.9)"/>
-      <use href="#bud" transform="translate(126 187) scale(.8)"/>
-      <use href="#bud" transform="translate(22 44) scale(.8)"/>
-      <use href="#blossom" transform="translate(108 12) scale(1.2)"/>
-      <use href="#blossom" transform="translate(156 66) scale(1.35)"/>
-      <use href="#blossom" transform="translate(156 130) scale(1.05)"/>
-      <use href="#blossom" transform="translate(146 200) scale(.9)"/>
-      <use href="#blossom" transform="translate(108 232) scale(.95)"/>
-      <use href="#blossom" transform="translate(16 70) scale(.9)"/>
-      <use href="#blossom" transform="translate(58 8) scale(.75)"/>
-      <use href="#blossom" transform="translate(128 44) scale(.7)"/>
-      <use href="#blossom" transform="translate(86 76) scale(.65)"/>
-      <use href="#blossom" transform="translate(122 156) scale(.6)"/>
+      <circle r="1.5" fill="#d9b56a"/>
+    </g>
+
+    <!-- Kuntum -->
+    <g id="kuntum">
+      <path d="M0 0C-3.6 -4 -3 -10 0 -13C3 -10 3.6 -4 0 0Z" fill="url(#gKuntum)" stroke="#6e5022" stroke-width=".4"/>
+      <path d="M0 0L-3 -4.5M0 0L3 -4.5M0 0V3" fill="none" stroke="#6e5022" stroke-width=".7" stroke-linecap="round"/>
+    </g>
+
+    <!-- Daun -->
+    <g id="daunM">
+      <path d="M0 0C6 -7 18 -8 28 0C18 6 6 6 0 0Z" fill="url(#emas)" opacity=".92"/>
+      <path d="M1 0H26M8 0L12 -3M14 0L18 -3M8 0L12 3M14 0L18 3" fill="none" stroke="#6e5022" stroke-width=".45"/>
+    </g>
+
+    <!-- Semburan bunga raya + melur + awan larat (sudut) -->
+    <symbol id="rayaSpray" viewBox="0 0 240 300" overflow="visible">
+      <g fill="none" stroke="url(#emas)" stroke-linecap="round">
+        <path d="M-5 5C50 10 95 45 110 100C120 140 110 180 90 210C80 226 84 244 98 248C110 250 114 238 106 232" stroke-width="2.2"/>
+        <path d="M40 12C70 -2 110 0 130 18C142 30 136 44 124 42C116 40 116 30 124 30" stroke-width="1.5"/>
+        <path d="M96 64C124 54 154 62 164 84C170 99 158 108 150 100C144 94 150 88 156 92" stroke-width="1.4"/>
+        <path d="M112 150C135 150 150 165 150 182C150 194 138 196 134 188C131 181 138 177 142 181" stroke-width="1.3"/>
+        <path d="M20 8C24 30 20 50 8 60C0 66 -4 58 2 54" stroke-width="1.2"/>
+        <path d="M62 24C58 40 64 54 76 58C84 60 86 52 80 50" stroke-width="1"/>
+      </g>
+      <use href="#daunM" transform="translate(52 16) rotate(-18)"/>
+      <use href="#daunM" transform="translate(86 44) rotate(40) scale(.9)"/>
+      <use href="#daunM" transform="translate(106 88) rotate(-30) scale(.85)"/>
+      <use href="#daunM" transform="translate(114 128) rotate(110) scale(.8)"/>
+      <use href="#daunM" transform="translate(104 176) rotate(-20) scale(.8)"/>
+      <use href="#daunM" transform="translate(8 26) rotate(95) scale(.7)"/>
+      <use href="#daunM" transform="translate(96 206) rotate(130) scale(.7)"/>
+      <use href="#kuntum" transform="translate(132 20) rotate(62) scale(1.1)"/>
+      <use href="#kuntum" transform="translate(166 84) rotate(95)"/>
+      <use href="#kuntum" transform="translate(100 246) rotate(200) scale(.9)"/>
+      <use href="#kuntum" transform="translate(6 58) rotate(210) scale(.8)"/>
+      <use href="#bungaRaya" transform="translate(126 118) rotate(18) scale(1.55)"/>
+      <use href="#bungaRaya" transform="translate(44 66) rotate(-40) scale(1.05)"/>
+      <use href="#bungaRaya" transform="translate(146 184) rotate(50) scale(.85)"/>
+      <use href="#melur" transform="translate(84 22) scale(1)"/>
+      <use href="#melur" transform="translate(98 34) scale(.75)"/>
+      <use href="#melur" transform="translate(74 98) scale(.85)"/>
+      <use href="#melur" transform="translate(106 196) scale(.8)"/>
+      <use href="#melur" transform="translate(120 210) scale(.6)"/>
+      <use href="#melur" transform="translate(22 36) scale(.7)"/>
+      <use href="#melur" transform="translate(160 136) scale(.7)"/>
       <g fill="#f3dea0">
-        <circle cx="176" cy="96" r="1.2"/><circle cx="60" cy="96" r="1"/><circle cx="170" cy="168" r=".9"/><circle cx="40" cy="120" r="1.1"/>
+        <circle cx="180" cy="100" r="1.2"/><circle cx="60" cy="120" r="1"/><circle cx="172" cy="226" r=".9"/><circle cx="36" cy="140" r="1.1"/><circle cx="150" cy="40" r=".9"/>
       </g>
     </symbol>
 
+    <!-- Mahkota awan larat untuk puncak gerbang -->
+    <symbol id="mahkota" viewBox="-92 -8 184 62" overflow="visible">
+      <g id="mahkotaSisi">
+        <g fill="none" stroke="url(#emas)" stroke-linecap="round">
+          <path d="M-8 32C-30 34 -48 26 -54 14C-58 4 -50 -2 -44 4C-40 8 -44 13 -48 10" stroke-width="1.5"/>
+          <path d="M-12 40C-40 48 -66 42 -80 32C-88 26 -84 18 -78 22" stroke-width="1.3"/>
+        </g>
+        <use href="#daunM" transform="translate(-26 31) rotate(188) scale(.6)"/>
+        <use href="#daunM" transform="translate(-50 44) rotate(172) scale(.55)"/>
+        <use href="#kuntum" transform="translate(-38 14) rotate(-58) scale(.75)"/>
+        <use href="#melur" transform="translate(-64 38) scale(.62)"/>
+        <use href="#melur" transform="translate(-58 6) scale(.5)"/>
+      </g>
+      <use href="#mahkotaSisi" transform="scale(-1 1)"/>
+      <use href="#bungaRaya" transform="translate(0 24) rotate(-90) scale(.9)"/>
+    </symbol>
+
+    <!-- Sudut kad -->
+    <symbol id="sudut" viewBox="0 0 70 70" overflow="visible">
+      <g fill="none" stroke="url(#emas)" stroke-linecap="round">
+        <path d="M2 68V22C2 10 10 2 22 2H68" stroke-width="1.2"/>
+        <path d="M8 68V27C8 16 16 8 27 8H68" stroke-width=".6" opacity=".6"/>
+        <path d="M16 44C16 26 24 16 40 16C50 16 52 26 44 28C38 29 37 22 42 21" stroke-width="1.1"/>
+      </g>
+      <use href="#daunM" transform="translate(22 30) rotate(-60) scale(.45)"/>
+      <use href="#melur" transform="translate(15 15) scale(.8)"/>
+    </symbol>
+
+    <!-- Ranting kecil -->
     <symbol id="sprig" viewBox="0 0 140 34" overflow="visible">
       <path d="M8 24C40 27 90 18 132 8" fill="none" stroke="url(#emas)" stroke-width="1.3" stroke-linecap="round"/>
-      <use href="#leaf" transform="translate(30 25) rotate(-30) scale(.6)"/>
-      <use href="#leaf" transform="translate(44 25) rotate(40) scale(.55)"/>
-      <use href="#leaf" transform="translate(88 18) rotate(-40) scale(.6)"/>
-      <use href="#leaf" transform="translate(100 15) rotate(30) scale(.55)"/>
-      <use href="#bud" transform="translate(126 9) scale(.7)"/>
-      <use href="#bud" transform="translate(14 24) scale(.6)"/>
-      <use href="#blossom" transform="translate(68 21) scale(.72)"/>
+      <use href="#daunM" transform="translate(28 25) rotate(-30) scale(.55)"/>
+      <use href="#daunM" transform="translate(42 25) rotate(40) scale(.5)"/>
+      <use href="#daunM" transform="translate(88 18) rotate(-40) scale(.55)"/>
+      <use href="#daunM" transform="translate(100 15) rotate(30) scale(.5)"/>
+      <use href="#kuntum" transform="translate(128 9) rotate(70) scale(.7)"/>
+      <use href="#melur" transform="translate(16 23) scale(.6)"/>
+      <use href="#melur" transform="translate(112 12) scale(.5)"/>
+      <use href="#bungaRaya" transform="translate(68 21) rotate(-20) scale(.6)"/>
     </symbol>
 
     <g id="bungaGaris" fill="none" stroke="currentColor" stroke-width="1.1">
-      <path d="M0 -1C-3 -3 -3.4 -7 0 -8.5C3.4 -7 3 -3 0 -1Z"/>
-      <path d="M0 -1C-3 -3 -3.4 -7 0 -8.5C3.4 -7 3 -3 0 -1Z" transform="rotate(72)"/>
-      <path d="M0 -1C-3 -3 -3.4 -7 0 -8.5C3.4 -7 3 -3 0 -1Z" transform="rotate(144)"/>
-      <path d="M0 -1C-3 -3 -3.4 -7 0 -8.5C3.4 -7 3 -3 0 -1Z" transform="rotate(216)"/>
-      <path d="M0 -1C-3 -3 -3.4 -7 0 -8.5C3.4 -7 3 -3 0 -1Z" transform="rotate(288)"/>
+      <path id="kgGaris" d="M0 -1C-3 -3 -3.4 -7 0 -8.5C3.4 -7 3 -3 0 -1Z"/>
+      <use href="#kgGaris" transform="rotate(72)"/>
+      <use href="#kgGaris" transform="rotate(144)"/>
+      <use href="#kgGaris" transform="rotate(216)"/>
+      <use href="#kgGaris" transform="rotate(288)"/>
       <circle r="1.3"/>
     </g>
 
@@ -111,7 +175,7 @@
     <symbol id="i-lokasi" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
     <symbol id="i-rsvp" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 10h16M8 3v4M16 3v4M9 15l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14.5-4.5M4 4v3.5h3.5M4 13a8 8 0 0 0 14.5 4.5M20 20v-3.5h-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-dewan" viewBox="0 0 24 24"><path d="M3 9.5 12 4l9 5.5M4 20h16M5 9.5V20M9 11v9M15 11v9M19 9.5V20M3 9.5h18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-dewan" viewBox="0 0 24 24"><path d="M2.5 11 12 3.5l9.5 7.5M9.5 5.5 7.8 3M14.5 5.5l1.7-2.5M4.5 10v10M19.5 10v10M3 20h18M10 20v-5h4v5M7 13h1.5M15.5 13H17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-jam" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
     <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4 20l1.2-4A8 8 0 1 1 8 18.8Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 9.2c.3 2.4 2.4 4.6 5 5.2l1.2-1.2-1.8-.9-.8.8c-1-.5-1.8-1.3-2.3-2.3l.8-.8-.9-1.8Z" fill="currentColor"/></symbol>
     <symbol id="i-tutup" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
@@ -119,15 +183,53 @@
   </defs>
 </svg>
 
-<!-- ============ Pintu pembuka ============ -->
-<div class="pintu" id="pintu">
-  <div class="pintu__daun pintu__daun--kiri"></div>
-  <div class="pintu__daun pintu__daun--kanan"></div>
-  <div class="pintu__tengah">
+<!-- ============ Sampul surat pembuka ============ -->
+<div class="sampul" id="sampul">
+  <div class="sampul__badan"></div>
+  <svg class="sampul__lipat" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 100L50 58L100 100" fill="none" stroke="#000" stroke-opacity=".45" stroke-width="2" vector-effect="non-scaling-stroke"/>
+    <path d="M0 99.6L50 58.6L100 99.6" fill="none" stroke="#d4b067" stroke-opacity=".35" stroke-width="1" vector-effect="non-scaling-stroke"/>
+  </svg>
+  <div class="sampul__lapik"></div>
+  <div class="sampul__tulisan">
+    <p class="sampul__kecil">Raikan Cinta</p>
+    <p class="sampul__nama" data-f="pasanganPendek"></p>
+    <p class="sampul__kecil" data-f="tarikhSampul"></p>
+  </div>
+  <p class="sampul__hint">Sentuh meterai untuk buka</p>
+  <div class="sampul__penutup">
+    <div class="sampul__kepak">
+      <svg class="sampul__tepi" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0L50 100L100 0" fill="none" stroke="#e3c47f" stroke-width="1.4" vector-effect="non-scaling-stroke"/><path d="M4 0L50 92L96 0" fill="none" stroke="#c9a45c" stroke-opacity=".5" stroke-width=".8" stroke-dasharray="3 3" vector-effect="non-scaling-stroke"/></svg>
+    </div>
     <button type="button" class="meterai" id="bukaJemputan" aria-label="Buka jemputan">
-      <span data-f="initials">RS</span>
+      <svg viewBox="-60 -60 120 120" aria-hidden="true">
+        <defs>
+          <radialGradient id="lilin" cx="-.25" cy="-.3" r="1.1">
+            <stop offset="0" stop-color="#fbeab4"/>
+            <stop offset=".4" stop-color="#d9b56a"/>
+            <stop offset=".8" stop-color="#a47d3a"/>
+            <stop offset="1" stop-color="#6f5222"/>
+          </radialGradient>
+          <filter id="timbul" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="1" stdDeviation=".3" flood-color="#fff3cf" flood-opacity=".7"/>
+            <feDropShadow dx="0" dy="-1" stdDeviation=".4" flood-color="#4a3210" flood-opacity=".6"/>
+          </filter>
+        </defs>
+        <g fill="url(#lilin)">
+          <path d="M2 -52C18 -51 30 -46 40 -36C49 -27 53 -14 52 0C53 12 50 25 42 36C33 47 19 52 4 53C-12 54 -26 49 -38 40C-48 31 -53 18 -52 3C-54 -12 -49 -26 -39 -37C-29 -47 -13 -53 2 -52Z"/>
+          <path d="M46 -22C54 -20 57 -12 52 -8Z M-50 18C-57 22 -56 30 -50 29Z M14 50C16 57 24 58 26 52Z" />
+        </g>
+        <circle r="35" fill="none" stroke="#7a5a26" stroke-width="1.6" opacity=".7"/>
+        <circle r="32" fill="none" stroke="#fff0c4" stroke-width=".7" opacity=".6"/>
+        <g filter="url(#timbul)" fill="#8a6629">
+          <text x="-2" y="13" text-anchor="middle" font-family="Playball, cursive" font-size="40">RS</text>
+        </g>
+        <g fill="none" stroke="#8a6629" stroke-width="1" opacity=".8">
+          <path d="M-20 24C-10 30 10 30 20 24"/>
+          <path d="M-14 27l-3 3M14 27l3 3M0 30v3"/>
+        </g>
+      </svg>
     </button>
-    <p class="pintu__hint">Sentuh untuk buka</p>
   </div>
 </div>
 
@@ -135,43 +237,267 @@
 
 <main class="kad" id="kad">
 
-  <!-- Muka depan -->
-  <section class="muka" id="muka">
-    <svg class="bunga bunga--tl" viewBox="0 0 220 280" aria-hidden="true"><use href="#spray" width="220" height="280"/></svg>
-    <svg class="bunga bunga--tr" viewBox="0 0 220 280" aria-hidden="true"><g transform="translate(220 0) scale(-1 1)"><use href="#spray" width="220" height="280"/></g></svg>
-    <svg class="bunga bunga--bl" viewBox="0 0 220 280" aria-hidden="true"><g transform="translate(0 280) scale(1 -1)"><use href="#spray" width="220" height="280"/></g></svg>
-    <svg class="bunga bunga--br" viewBox="0 0 220 280" aria-hidden="true"><g transform="translate(220 280) scale(-1 -1)"><use href="#spray" width="220" height="280"/></g></svg>
+  <!-- ============ Muka depan: pengantin berjalan ============ -->
+  <section class="hero" id="muka">
+    <div class="hero__media" id="heroMedia">
+      <svg class="hero__adegan" id="adegan" viewBox="0 0 400 760" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Rahimah dan Shafiee berjalan berpimpin tangan menuju rumah Melayu di bawah langit senja">
+        <defs>
+          <linearGradient id="langit" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#0d0805"/>
+            <stop offset=".25" stop-color="#24150b"/>
+            <stop offset=".45" stop-color="#5e3b1a"/>
+            <stop offset=".54" stop-color="#b8843c"/>
+            <stop offset=".58" stop-color="#eac27a"/>
+            <stop offset="1" stop-color="#eac27a"/>
+          </linearGradient>
+          <radialGradient id="matahari" cx="200" cy="436" r="190" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#fff4cf" stop-opacity=".95"/>
+            <stop offset=".18" stop-color="#f6d58f" stop-opacity=".7"/>
+            <stop offset=".5" stop-color="#d9a354" stop-opacity=".25"/>
+            <stop offset="1" stop-color="#d9a354" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="awanG" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#3b2413"/>
+            <stop offset=".7" stop-color="#b98542"/>
+            <stop offset="1" stop-color="#f1cf8c"/>
+          </linearGradient>
+          <linearGradient id="tanahG" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#4a2f18"/>
+            <stop offset=".35" stop-color="#2a190d"/>
+            <stop offset="1" stop-color="#140c07"/>
+          </linearGradient>
+          <linearGradient id="laluanG" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#e2b872"/>
+            <stop offset=".25" stop-color="#9b6d36"/>
+            <stop offset="1" stop-color="#3a2414"/>
+          </linearGradient>
+          <linearGradient id="pudarBawah" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1a100a" stop-opacity="0"/>
+            <stop offset="1" stop-color="#1a100a"/>
+          </linearGradient>
+          <linearGradient id="bajuL" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#c9b772"/>
+            <stop offset=".5" stop-color="#e4d596"/>
+            <stop offset="1" stop-color="#c3b06a"/>
+          </linearGradient>
+          <linearGradient id="bajuP" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#d5c690"/>
+            <stop offset=".5" stop-color="#efe3b6"/>
+            <stop offset="1" stop-color="#cfbf86"/>
+          </linearGradient>
+          <linearGradient id="tudungG" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#c9ad8b"/>
+            <stop offset=".5" stop-color="#dcc4a3"/>
+            <stop offset="1" stop-color="#b89a78"/>
+          </linearGradient>
+          <linearGradient id="songkokG" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#0e0b0b"/>
+            <stop offset=".45" stop-color="#2a2323"/>
+            <stop offset="1" stop-color="#0e0b0b"/>
+          </linearGradient>
+          <linearGradient id="kulit" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#a8704c"/>
+            <stop offset=".5" stop-color="#c98f66"/>
+            <stop offset="1" stop-color="#a8704c"/>
+          </linearGradient>
+          <pattern id="songketP" width="8" height="8" patternUnits="userSpaceOnUse">
+            <rect width="8" height="8" fill="#211a14"/>
+            <path d="M4 1L7 4L4 7L1 4Z" fill="none" stroke="#b8913f" stroke-width=".6"/>
+            <circle cx="4" cy="4" r=".6" fill="#d9b56a"/>
+          </pattern>
+          <filter id="rim" x="-30%" y="-10%" width="160%" height="120%">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="1" result="d"/>
+            <feGaussianBlur in="d" stdDeviation="2" result="b"/>
+            <feFlood flood-color="#ffd690" flood-opacity=".85"/>
+            <feComposite in2="b" operator="in" result="glow"/>
+            <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="kabur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
 
-    <div class="muka__isi">
+          <!-- bunga manggar -->
+          <g id="manggar">
+            <path d="M0 0V-96" stroke="#7a5424" stroke-width="2.4"/>
+            <path d="M0 0V-96" stroke="#e7c983" stroke-width=".7"/>
+            <g fill="none" stroke="#f1d894" stroke-width=".9" stroke-linecap="round">
+              <path d="M0 -96Q-4 -112 -30 -84"/><path d="M0 -96Q-2 -116 -22 -76"/><path d="M0 -96Q-1 -118 -14 -70"/>
+              <path d="M0 -96Q0 -120 -5 -66"/><path d="M0 -96Q0 -120 5 -66"/><path d="M0 -96Q1 -118 14 -70"/>
+              <path d="M0 -96Q2 -116 22 -76"/><path d="M0 -96Q4 -112 30 -84"/>
+            </g>
+            <g fill="none" stroke="#c9a45c" stroke-width=".7" stroke-linecap="round">
+              <path d="M0 -96Q-6 -106 -34 -92"/><path d="M0 -96Q-3 -114 -26 -80"/><path d="M0 -96Q3 -114 26 -80"/><path d="M0 -96Q6 -106 34 -92"/>
+              <path d="M0 -96Q-1 -112 -9 -72"/><path d="M0 -96Q1 -112 9 -72"/>
+            </g>
+            <g fill="#fff1c8"><circle cx="-30" cy="-84" r="1.2"/><circle cx="30" cy="-84" r="1.2"/><circle cx="-5" cy="-66" r="1"/><circle cx="14" cy="-70" r="1"/><circle cx="-22" cy="-76" r="1"/></g>
+            <path d="M-4 -60H4" stroke="#e7c983" stroke-width="1.2"/>
+          </g>
+        </defs>
+
+        <!-- langit -->
+        <rect width="400" height="760" fill="url(#langit)"/>
+        <g class="bintang" fill="#f3dea0">
+          <circle cx="40" cy="50" r="1"/><circle cx="96" cy="120" r=".8"/><circle cx="150" cy="36" r="1.1"/><circle cx="250" cy="70" r=".8"/>
+          <circle cx="320" cy="30" r="1"/><circle cx="360" cy="110" r=".9"/><circle cx="20" cy="170" r=".8"/><circle cx="380" cy="190" r=".8"/>
+          <circle cx="210" cy="140" r=".7"/><circle cx="300" cy="160" r=".7"/>
+        </g>
+        <circle cx="200" cy="436" r="190" fill="url(#matahari)"/>
+        <circle cx="200" cy="432" r="22" fill="#fff3d0" opacity=".9"/>
+
+        <g class="awan awan--1"><path d="M20 300C20 288 34 282 44 288C50 276 72 276 78 288C90 282 106 290 102 302Z" fill="url(#awanG)" opacity=".85"/></g>
+        <g class="awan awan--2"><path d="M250 262C250 248 268 240 282 248C290 232 318 232 326 248C342 240 362 250 356 266Z" fill="url(#awanG)" opacity=".75"/></g>
+        <g class="awan awan--3"><path d="M110 360C110 350 124 344 134 350C140 340 160 340 166 350C176 346 188 352 186 362Z" fill="url(#awanG)" opacity=".9"/></g>
+        <g class="awan awan--1"><path d="M280 356C280 346 292 340 302 346C308 336 326 336 332 346C344 342 356 350 352 360Z" fill="url(#awanG)" opacity=".8"/></g>
+
+        <!-- bukit & tanah -->
+        <path d="M0 446C60 430 110 438 150 440H250C300 432 350 428 400 440V460H0Z" fill="#3a2414"/>
+        <path d="M0 440H400V760H0Z" fill="url(#tanahG)"/>
+
+        <!-- rumah Melayu -->
+        <ellipse cx="200" cy="420" rx="120" ry="34" fill="#f2c979" opacity=".22" filter="url(#kabur)"/>
+        <g class="istana">
+          <g stroke="#3a2414" stroke-width="1.4"><path d="M122 440V448M148 440V448M168 440V448M232 440V448M252 440V448M278 440V448"/></g>
+          <rect x="116" y="420" width="34" height="20" fill="#22140b" stroke="#c9a45c" stroke-width=".5"/>
+          <rect x="250" y="420" width="34" height="20" fill="#22140b" stroke="#c9a45c" stroke-width=".5"/>
+          <rect x="150" y="404" width="100" height="36" fill="#26170c" stroke="#d4b067" stroke-width=".6"/>
+          <g fill="#f5c872">
+            <rect x="158" y="412" width="10" height="14" rx="1"/><rect x="176" y="412" width="10" height="14" rx="1"/>
+            <rect x="193" y="410" width="14" height="30" rx="1" opacity=".95"/>
+            <rect x="214" y="412" width="10" height="14" rx="1"/><rect x="232" y="412" width="10" height="14" rx="1"/>
+            <rect x="124" y="426" width="8" height="9"/><rect x="136" y="426" width="8" height="9"/>
+            <rect x="256" y="426" width="8" height="9"/><rect x="268" y="426" width="8" height="9"/>
+          </g>
+          <path d="M112 422L150 398V422Z M288 422L250 398V422Z" fill="#170d07" stroke="#d4b067" stroke-width=".6"/>
+          <path d="M138 406L200 352L262 406Z" fill="#170d07" stroke="#e0c47e" stroke-width=".9"/>
+          <path d="M178 402L200 378L222 402Z" fill="none" stroke="#d4b067" stroke-width=".6"/>
+          <path d="M200 380V402M190 391L200 402L210 391M184 398H216" fill="none" stroke="#d4b067" stroke-width=".4"/>
+          <path d="M193 358L209 338M207 358L191 338" stroke="#f1d894" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M148 400L141 392M252 400L259 392" stroke="#f1d894" stroke-width="1" stroke-linecap="round"/>
+          <path d="M191 440L187 450H213L209 440" fill="none" stroke="#d4b067" stroke-width=".6"/>
+        </g>
+
+        <!-- pokok kelapa -->
+        <g class="kelapa" fill="none" stroke="#150c06" stroke-linecap="round">
+          <path d="M60 452C56 420 50 392 56 352" stroke-width="5"/>
+          <path d="M56 352Q30 342 10 366M56 352Q36 330 8 334M56 352Q62 326 88 318M56 352Q80 342 100 362M56 352Q52 330 44 314M56 352Q30 350 20 384" stroke-width="3"/>
+          <path d="M346 450C350 424 356 400 350 368" stroke-width="4.5"/>
+          <path d="M350 368Q376 358 394 380M350 368Q370 348 396 352M350 368Q344 344 320 338M350 368Q328 360 310 378M350 368Q356 346 364 332" stroke-width="2.8"/>
+        </g>
+
+        <!-- laluan -->
+        <path d="M190 440H210L380 760H20Z" fill="url(#laluanG)"/>
+        <path d="M190 440L20 760M210 440L380 760" stroke="#e8cc88" stroke-width="1.1" opacity=".7"/>
+        <g id="garisLaluan" stroke="#f1d894" stroke-linecap="round"></g>
+        <g id="barisManggar"></g>
+
+        <!-- pengantin -->
+        <g class="pasangan-jalan" filter="url(#rim)">
+          <ellipse cx="158" cy="670" rx="30" ry="6" fill="#000" opacity=".35"/>
+          <ellipse cx="240" cy="670" rx="34" ry="6" fill="#000" opacity=".35"/>
+
+          <!-- Shafiee -->
+          <g transform="translate(158 668)">
+            <g class="pl">
+              <g class="pl-kaki pl-kaki--kiri">
+                <path d="M-16 -48L-15 -5H-5L-4 -48Z" fill="#121010"/>
+                <ellipse cx="-10" cy="-3" rx="7" ry="3.2" fill="#0a0808"/>
+              </g>
+              <g class="pl-kaki pl-kaki--kanan">
+                <path d="M4 -48L5 -5H15L16 -48Z" fill="#121010"/>
+                <ellipse cx="10" cy="-3" rx="7" ry="3.2" fill="#0a0808"/>
+              </g>
+              <path d="M-27 -106L-29 -46Q0 -42 29 -46L27 -106Z" fill="url(#songketP)"/>
+              <path d="M-29 -50Q0 -46 29 -50" stroke="#d9b56a" stroke-width="1.4" fill="none"/>
+              <path d="M-28 -56L-24 -50L-20 -56L-16 -50L-12 -56L-8 -50L-4 -56L0 -50L4 -56L8 -50L12 -56L16 -50L20 -56L24 -50L28 -56" stroke="#d9b56a" stroke-width=".7" fill="none"/>
+              <g class="pl-lengan">
+                <path d="M-30 -158C-38 -150 -41 -135 -42 -118L-33 -116C-32 -132 -30 -145 -27 -150Z" fill="url(#bajuL)"/>
+                <path d="M-41 -118L-42 -97H-35L-34 -117Z" fill="url(#kulit)"/>
+                <rect x="-42.6" y="-106" width="8.4" height="4.4" rx="1.2" fill="#111"/>
+                <ellipse cx="-38.5" cy="-93" rx="4.2" ry="5" fill="#c08660"/>
+              </g>
+              <path d="M30 -158C37 -152 41 -140 43 -125L35 -121C33 -134 31 -146 27 -150Z" fill="url(#bajuL)"/>
+              <path d="M36 -122L43 -126L45 -96L39 -95Z" fill="url(#kulit)"/>
+              <path d="M-31 -160C-33 -140 -30 -120 -29 -100Q0 -95 29 -100C30 -120 33 -140 31 -160C20 -167 -20 -167 -31 -160Z" fill="url(#bajuL)"/>
+              <path d="M-12 -150C-14 -130 -13 -115 -12 -102M12 -150C14 -130 13 -115 12 -102M0 -158V-100" stroke="#a8964f" stroke-width=".6" opacity=".45" fill="none"/>
+              <path d="M-29 -101Q0 -96 29 -101" stroke="#bda963" stroke-width="1" fill="none"/>
+              <rect x="-6" y="-171" width="12" height="11" fill="url(#kulit)"/>
+              <path d="M-9 -163Q0 -159 9 -163" stroke="#bda963" stroke-width="1.4" fill="none"/>
+              <ellipse cx="-15" cy="-179" rx="3" ry="5" fill="#b77c56"/>
+              <ellipse cx="15" cy="-179" rx="3" ry="5" fill="#b77c56"/>
+              <ellipse cx="0" cy="-180" rx="15" ry="16" fill="#1a1410"/>
+              <path d="M-16 -183L-12 -184M16 -183L12 -184" stroke="#050505" stroke-width="1.2"/>
+              <path d="M-16 -186L-15.5 -205Q0 -209 15.5 -205L16 -186Q0 -183 -16 -186Z" fill="url(#songkokG)"/>
+              <path d="M-15 -202Q0 -205 15 -202" stroke="#3a3232" stroke-width=".6" fill="none"/>
+            </g>
+          </g>
+
+          <!-- Rahimah -->
+          <g transform="translate(240 668)">
+            <g class="pp">
+              <g class="pp-kain">
+                <path d="M-22 -92C-25 -60 -30 -25 -35 -1Q0 4 35 -1C30 -25 25 -60 22 -92Z" fill="url(#bajuP)"/>
+                <path d="M-8 -80C-9 -50 -10 -25 -11 0M9 -80C10 -50 11 -25 12 0" stroke="#b9aa70" stroke-width=".6" opacity=".5" fill="none"/>
+                <g fill="#fbf4da" opacity=".8">
+                  <circle cx="-14" cy="-30" r="1.2"/><circle cx="6" cy="-20" r="1.2"/><circle cx="18" cy="-38" r="1.2"/><circle cx="-4" cy="-52" r="1.2"/><circle cx="-22" cy="-12" r="1.2"/><circle cx="24" cy="-10" r="1.2"/>
+                </g>
+              </g>
+              <path d="M-24 -104C-27 -84 -29 -64 -30 -46Q0 -41 30 -46C29 -64 27 -84 24 -104Z" fill="url(#bajuP)"/>
+              <path d="M-30 -47Q0 -42 30 -47" stroke="#fbf4da" stroke-width="1" stroke-dasharray="2 2" fill="none"/>
+              <g fill="#fbf4da" opacity=".85"><circle cx="-12" cy="-70" r="1.2"/><circle cx="10" cy="-60" r="1.2"/><circle cx="-18" cy="-54" r="1.2"/><circle cx="16" cy="-80" r="1.2"/></g>
+              <path d="M-28 -112L-38 -99L-33 -95L-24 -105Z" fill="url(#bajuP)"/>
+              <ellipse cx="-39" cy="-93" rx="4" ry="4.6" fill="#c08660"/>
+              <path d="M26 -110L28 -88L23 -88L22 -106Z" fill="url(#bajuP)"/>
+              <ellipse cx="25.5" cy="-85" rx="3.4" ry="4" fill="#c08660"/>
+              <g class="pp-tudung">
+                <path d="M0 -190C-15 -190 -21 -178 -21 -166C-22 -155 -28 -148 -34 -138C-40 -126 -40 -110 -36 -98a6 5 0 0 0 12 0a6 5 0 0 0 12 0a6 5 0 0 0 12 0a6 5 0 0 0 12 0a6 5 0 0 0 12 0a6 5 0 0 0 12 0C40 -110 40 -126 34 -138C28 -148 22 -155 21 -166C21 -178 15 -190 0 -190Z" fill="url(#tudungG)"/>
+                <path d="M-36 -98a6 5 0 0 0 12 0a6 5 0 0 0 12 0a6 5 0 0 0 12 0a6 5 0 0 0 12 0a6 5 0 0 0 12 0a6 5 0 0 0 12 0" fill="none" stroke="#f3e6cc" stroke-width="1"/>
+                <path d="M-6 -176C-10 -150 -14 -125 -16 -100M6 -176C10 -150 14 -125 16 -100M0 -170V-96" stroke="#a88d6c" stroke-width=".8" opacity=".6" fill="none"/>
+                <path d="M-20 -165Q0 -158 20 -165" stroke="#b89a78" stroke-width=".8" opacity=".6" fill="none"/>
+              </g>
+            </g>
+          </g>
+        </g>
+
+        <rect y="640" width="400" height="120" fill="url(#pudarBawah)"/>
+      </svg>
+    </div>
+
+    <div class="hero__langit">
       <p class="eyebrow" data-f="tajuk"></p>
       <h1 class="initials" data-f="initials"></h1>
-      <p class="pasangan" data-f="pasanganPendek"></p>
-      <span class="garis" aria-hidden="true"></span>
+      <p class="hero__nama" data-f="pasanganPendek"></p>
       <p class="tarikh" data-f="tarikhPaparan"></p>
     </div>
-    <a class="muka__turun" href="#jemputan" aria-label="Skrol ke jemputan"><svg><use href="#i-bawah"/></svg></a>
+
+    <svg class="bunga-malay hero__semak hero__semak--kiri" viewBox="0 0 240 300" aria-hidden="true"><g transform="translate(0 300) scale(1 -1)"><use href="#rayaSpray" width="240" height="300"/></g></svg>
+    <svg class="bunga-malay hero__semak hero__semak--kanan" viewBox="0 0 240 300" aria-hidden="true"><g transform="translate(240 300) scale(-1 -1)"><use href="#rayaSpray" width="240" height="300"/></g></svg>
   </section>
 
-  <!-- Jemputan -->
+  <div class="songket" aria-hidden="true"></div>
+
+  <!-- ============ Jemputan dalam gerbang ============ -->
   <section class="seksyen jemputan" id="jemputan">
-    <svg class="bunga-sisi bunga-sisi--kiri" viewBox="0 0 220 280" aria-hidden="true"><use href="#spray" width="220" height="280"/></svg>
-    <p class="bismillah reveal" lang="ar" dir="rtl">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
-    <p class="pembuka reveal" data-f="pembuka"></p>
-    <p class="ibubapa reveal"><span data-f="bapa"></span><span class="dan">&amp;</span><span data-f="ibu"></span></p>
-    <p class="jemput reveal" data-f="jemputan"></p>
-    <p class="kemajlis reveal" data-f="keMajlis"></p>
-    <h2 class="nama-skrip reveal"><span data-f="pengantinPerempuan"></span><span class="dan">&amp;</span><span data-f="pengantinLelaki"></span></h2>
-    <svg class="ranting reveal" viewBox="0 0 140 34" aria-hidden="true"><use href="#sprig" width="140" height="34"/></svg>
-    <p class="tarikh reveal" data-f="tarikhPaparan"></p>
-    <div class="kira reveal" id="kiraDetik" role="timer" aria-label="Kiraan detik ke majlis">
-      <div class="kira__kotak"><b data-k="hari">0</b><span>Hari</span></div>
-      <div class="kira__kotak"><b data-k="jam">00</b><span>Jam</span></div>
-      <div class="kira__kotak"><b data-k="minit">00</b><span>Minit</span></div>
-      <div class="kira__kotak"><b data-k="saat">00</b><span>Saat</span></div>
+    <div class="gerbang">
+      <svg class="gerbang__mahkota" viewBox="-92 -8 184 62" aria-hidden="true"><use href="#mahkota" x="-92" y="-8" width="184" height="62"/></svg>
+      <svg class="bunga-malay gerbang__bunga gerbang__bunga--kiri" viewBox="0 0 240 300" aria-hidden="true"><g transform="translate(0 300) scale(1 -1)"><use href="#rayaSpray" width="240" height="300"/></g></svg>
+      <svg class="bunga-malay gerbang__bunga gerbang__bunga--kanan" viewBox="0 0 240 300" aria-hidden="true"><g transform="translate(240 300) scale(-1 -1)"><use href="#rayaSpray" width="240" height="300"/></g></svg>
+
+      <p class="bismillah reveal" lang="ar" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+      <p class="pembuka reveal" data-f="pembuka"></p>
+      <p class="ibubapa reveal"><span data-f="bapa"></span><span class="dan">&amp;</span><span data-f="ibu"></span></p>
+      <p class="jemput reveal" data-f="jemputan"></p>
+      <p class="kemajlis reveal" data-f="keMajlis"></p>
+      <h2 class="nama-skrip reveal"><span data-f="pengantinPerempuan"></span><span class="dan">&amp;</span><span data-f="pengantinLelaki"></span></h2>
+      <svg class="ranting reveal" viewBox="0 0 140 34" aria-hidden="true"><use href="#sprig" width="140" height="34"/></svg>
+      <p class="tarikh reveal" data-f="tarikhPaparan"></p>
+      <div class="kira reveal" id="kiraDetik" role="timer" aria-label="Kiraan detik ke majlis">
+        <div class="kira__kotak"><b data-k="hari">0</b><span>Hari</span></div>
+        <div class="kira__kotak"><b data-k="jam">00</b><span>Jam</span></div>
+        <div class="kira__kotak"><b data-k="minit">00</b><span>Minit</span></div>
+        <div class="kira__kotak"><b data-k="saat">00</b><span>Saat</span></div>
+      </div>
     </div>
   </section>
 
-  <!-- Butiran majlis -->
+  <!-- ============ Butiran majlis ============ -->
   <section class="seksyen butiran" id="butiran">
     <div class="butiran__blok reveal">
       <svg class="ikon"><use href="#i-dewan"/></svg>
@@ -185,17 +511,14 @@
 
     <svg class="pelamin reveal" viewBox="0 0 320 210" role="img" aria-label="Lakaran pengantin bersanding di pelamin">
       <g fill="none" stroke="#d8b96e" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-        <!-- gerbang pelamin -->
         <path d="M70 180V78C70 40 110 18 160 18C210 18 250 40 250 78V180"/>
         <path d="M84 180V82C84 50 118 32 160 32C202 32 236 50 236 82V180" stroke-width=".9" opacity=".7"/>
         <path d="M84 70C110 96 140 96 160 72C180 96 210 96 236 70"/>
         <path d="M84 70C79 100 89 128 82 152M236 70C241 100 231 128 238 152" opacity=".8"/>
-        <path d="M160 18v-6M154 10a6 6 0 0 1 12 0"/>
+        <path d="M154 16L166 4M166 16L154 4"/>
         <path d="M40 182H280M62 190H258" />
-        <!-- kerusi -->
         <path d="M106 150V134C106 118 214 118 214 134V150" opacity=".85"/>
         <path d="M100 152H220M104 152V166M216 152V166" opacity=".85"/>
-        <!-- pengantin lelaki -->
         <path d="M126 76 127 63H149L150 76Z"/>
         <path d="M128 76C127 91 132 97 138 97C144 97 149 91 148 76"/>
         <path d="M118 152C118 120 124 104 138 101C152 104 158 120 158 152"/>
@@ -204,7 +527,6 @@
         <path d="M126 134 132 154M136 134 142 154M146 134 152 154" stroke-width=".7" opacity=".7"/>
         <path d="M123 112C118 126 122 136 136 138M153 112C158 126 154 136 140 138"/>
         <path d="M127 154V178H120M149 154V178H156"/>
-        <!-- pengantin perempuan -->
         <path d="M173 86C173 70 179 63 187 63C195 63 201 70 201 86"/>
         <path d="M177 83C177 94 182 99 187 99C192 99 197 94 197 83"/>
         <path d="M173 86C171 100 165 110 163 122C177 129 197 129 211 122C209 110 203 100 201 86"/>
@@ -217,33 +539,29 @@
         <use href="#bungaGaris" transform="translate(184 139) scale(.55)"/>
         <use href="#bungaGaris" transform="translate(178 136) scale(.4)"/>
         <use href="#bungaGaris" transform="translate(191 136) scale(.4)"/>
-        <!-- susunan bunga kiri & kanan -->
-        <use href="#bungaGaris" transform="translate(64 148)"/>
-        <use href="#bungaGaris" transform="translate(80 134) scale(.85)"/>
-        <use href="#bungaGaris" transform="translate(92 154) scale(.9)"/>
-        <use href="#bungaGaris" transform="translate(54 166) scale(.8)"/>
-        <use href="#bungaGaris" transform="translate(98 172) scale(.7)"/>
-        <use href="#bungaGaris" transform="translate(256 148)"/>
-        <use href="#bungaGaris" transform="translate(240 134) scale(.85)"/>
-        <use href="#bungaGaris" transform="translate(228 154) scale(.9)"/>
-        <use href="#bungaGaris" transform="translate(266 166) scale(.8)"/>
-        <use href="#bungaGaris" transform="translate(222 172) scale(.7)"/>
       </g>
-      <g fill="none" stroke="#c9a45c" stroke-width=".9" stroke-linecap="round" opacity=".8">
-        <path d="M60 180C62 170 64 160 64 156M80 180C80 160 80 150 80 142M98 180C96 176 94 166 92 162"/>
-        <path d="M70 170C64 164 58 164 52 168M88 164C94 158 100 158 106 162"/>
-        <path d="M260 180C258 170 256 160 256 156M240 180C240 160 240 150 240 142M222 180C224 176 226 166 228 162"/>
-        <path d="M250 170C256 164 262 164 268 168M232 164C226 158 220 158 214 162"/>
-      </g>
-      <g fill="#e8d29b"><circle cx="40" cy="60" r="1.2"/><circle cx="282" cy="52" r="1.2"/><circle cx="30" cy="110" r=".9"/><circle cx="292" cy="120" r=".9"/></g>
+      <use href="#bungaRaya" transform="translate(64 150) scale(.8)"/>
+      <use href="#melur" transform="translate(82 136) scale(.9)"/>
+      <use href="#bungaRaya" transform="translate(92 160) rotate(40) scale(.6)"/>
+      <use href="#melur" transform="translate(54 170) scale(.8)"/>
+      <use href="#bungaRaya" transform="translate(256 150) rotate(20) scale(.8)"/>
+      <use href="#melur" transform="translate(238 136) scale(.9)"/>
+      <use href="#bungaRaya" transform="translate(228 160) rotate(-30) scale(.6)"/>
+      <use href="#melur" transform="translate(266 170) scale(.8)"/>
     </svg>
 
     <ul class="aturcara reveal" id="aturcara"></ul>
   </section>
 
-  <!-- Doa -->
+  <div class="songket" aria-hidden="true"></div>
+
+  <!-- ============ Doa ============ -->
   <section class="seksyen doa" id="doa">
-    <div class="doa__kad reveal">
+    <div class="kad-emas doa__kad reveal">
+      <svg class="sudut sudut--tl" viewBox="0 0 70 70" aria-hidden="true"><use href="#sudut" width="70" height="70"/></svg>
+      <svg class="sudut sudut--tr" viewBox="0 0 70 70" aria-hidden="true"><use href="#sudut" width="70" height="70"/></svg>
+      <svg class="sudut sudut--bl" viewBox="0 0 70 70" aria-hidden="true"><use href="#sudut" width="70" height="70"/></svg>
+      <svg class="sudut sudut--br" viewBox="0 0 70 70" aria-hidden="true"><use href="#sudut" width="70" height="70"/></svg>
       <svg class="ranting ranting--kecil" viewBox="0 0 140 34" aria-hidden="true"><use href="#sprig" width="140" height="34"/></svg>
       <div class="doa__teks" id="doaTeks"></div>
       <p class="doa__amin" data-f="doaPenutup"></p>
@@ -251,13 +569,16 @@
     </div>
   </section>
 
-  <!-- Galeri -->
+  <!-- ============ Galeri ============ -->
   <section class="galeri" id="galeri" aria-label="Galeri gambar">
+    <h2 class="tajuk-skrip reveal">Kenangan Kami</h2>
     <div class="galeri__trek" id="galeriTrek"></div>
     <div class="galeri__titik" id="galeriTitik"></div>
   </section>
 
-  <!-- RSVP -->
+  <div class="songket" aria-hidden="true"></div>
+
+  <!-- ============ RSVP ============ -->
   <section class="seksyen rsvp" id="rsvp">
     <h2 class="tajuk-skrip reveal">RSVP</h2>
     <div class="rsvp__stat reveal">
@@ -267,16 +588,24 @@
     <button type="button" class="btn-pil reveal" data-buka="modalRsvp">ISI RSVP &amp; UCAPAN</button>
   </section>
 
-  <!-- Guest Book -->
+  <!-- ============ Guest Book ============ -->
   <section class="seksyen ucapan" id="ucapan">
     <h2 class="tajuk-skrip reveal">Guest Book</h2>
-    <div class="ucapan__kad reveal" id="senaraiUcapan" tabindex="0" aria-label="Ucapan tetamu" aria-live="polite">
-      <p class="ucapan__kosong">Memuatkan ucapan…</p>
+    <div class="kad-emas ucapan__bingkai reveal">
+      <svg class="sudut sudut--tl" viewBox="0 0 70 70" aria-hidden="true"><use href="#sudut" width="70" height="70"/></svg>
+      <svg class="sudut sudut--tr" viewBox="0 0 70 70" aria-hidden="true"><use href="#sudut" width="70" height="70"/></svg>
+      <svg class="sudut sudut--bl" viewBox="0 0 70 70" aria-hidden="true"><use href="#sudut" width="70" height="70"/></svg>
+      <svg class="sudut sudut--br" viewBox="0 0 70 70" aria-hidden="true"><use href="#sudut" width="70" height="70"/></svg>
+      <div class="ucapan__kad" id="senaraiUcapan" tabindex="0" aria-label="Ucapan tetamu" aria-live="polite">
+        <p class="ucapan__kosong">Memuatkan ucapan…</p>
+      </div>
     </div>
   </section>
 
-  <!-- Penutup -->
+  <!-- ============ Penutup ============ -->
   <section class="seksyen penutup">
+    <svg class="bunga-malay penutup__bunga penutup__bunga--kiri" viewBox="0 0 240 300" aria-hidden="true"><g transform="translate(0 300) scale(1 -1)"><use href="#rayaSpray" width="240" height="300"/></g></svg>
+    <svg class="bunga-malay penutup__bunga penutup__bunga--kanan" viewBox="0 0 240 300" aria-hidden="true"><g transform="translate(240 300) scale(-1 -1)"><use href="#rayaSpray" width="240" height="300"/></g></svg>
     <p class="penutup__teks reveal" data-f="penutup"></p>
     <p class="penutup__terima reveal" data-f="terimaKasih"></p>
     <svg class="ranting reveal" viewBox="0 0 140 34" aria-hidden="true"><use href="#sprig" width="140" height="34"/></svg>

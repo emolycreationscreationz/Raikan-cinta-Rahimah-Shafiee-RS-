@@ -22,6 +22,7 @@ window.MAJLIS = {
 
   // --- Tarikh & masa ---
   tarikhPaparan: "SABTU | 31 OKT 2026",
+  tarikhSampul: "31 · 10 · 2026",          // tarikh kecil pada sampul surat
   // Masa mula majlis untuk kiraan detik (waktu Malaysia, +08:00)
   tarikhMula: "2026-10-31T11:30:00+08:00",
   masa: "11:30 AM - 3:30 PM",
@@ -62,6 +63,12 @@ window.MAJLIS = {
     { nama: "Bazlaa", telefon: "+6011-61216141" },
     { nama: "Ruziah", telefon: "+6014-6665827" },
   ],
+
+  // --- Video muka depan (pilihan) ---
+  // Kosong = animasi lukisan pengantin berjalan. Isi laluan fail MP4
+  // (contoh "assets/video/pengantin.mp4") untuk guna video sendiri.
+  heroVideo: "",
+  heroPoster: "",
 
   // --- Muzik latar (letak fail MP3 di assets/music/lagu.mp3) ---
   muzik: "assets/music/lagu.mp3",
