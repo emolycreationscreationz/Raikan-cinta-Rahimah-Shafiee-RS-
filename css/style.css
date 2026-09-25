@@ -572,7 +572,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .sudut--bl { bottom: 4px; left: 4px; transform: scaleY(-1); }
 .sudut--br { bottom: 4px; right: 4px; transform: scale(-1, -1); }
 
-.doa { padding: 50px 18px 40px; }
+.doa { padding: 50px 18px 12px; }
 .doa__kad { padding-top: 54px; }
 .ranting--kecil { width: 110px; margin: 0 auto 12px; display: block; }
 .doa__teks { font: 500 18px/1.6 var(--f-serif); font-style: italic; color: var(--teks); text-wrap: balance; }
@@ -581,7 +581,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .doa__hashtag { margin: 14px 0 0; font: 700 italic 18px/1.4 var(--f-serif); color: var(--emas); letter-spacing: .02em; }
 
 /* ---------- Galeri ---------- */
-.galeri { padding: 50px 0 40px; text-align: center; }
+.galeri { padding: 26px 0 40px; text-align: center; }
 .galeri__trek {
   display: flex;
   overflow-x: auto;
