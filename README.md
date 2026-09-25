@@ -27,6 +27,14 @@ nombor hubungi, muzik dan URL RSVP semua di situ.
   gambar yang ditunjukkan bila dipotong (contoh `"50% 30%"`).
 - **Warna**: pemboleh ubah di bahagian atas `css/style.css` (`--emas`, `--coklat`, `--hitam`, …).
 
+## Video muka depan
+
+`assets/video/pengantin.mp4` (+ `.webm` sandaran) ialah video pengantin berjalan dalam format potret,
+sudah digred warna emas-coklat dan dicantum dengan latar kabur supaya menyatu dengan halaman.
+Video bermula dari awal sebaik sampul dibuka. Gambar `pengantin-poster.jpg` dipaparkan sementara video dimuatkan.
+Untuk tukar video, ganti fail tersebut dan kemas kini `heroVideo` / `heroVideoWebm` / `heroPoster` dalam `js/config.js`.
+Kosongkan `heroVideo` untuk kembali ke animasi lukisan.
+
 ## Muzik
 
 Letak fail MP3 sebagai `assets/music/lagu.mp3`. Muzik bermula bila tetamu tekan meterai.

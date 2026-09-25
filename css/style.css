@@ -264,7 +264,14 @@ button { font: inherit; color: inherit; cursor: pointer; }
 }
 .hero__media { position: absolute; inset: 0; }
 .hero__adegan, .hero__video { position: absolute; inset: 0; width: 100%; height: 100%; }
-.hero__video { object-fit: cover; }
+.hero__video { object-fit: cover; object-position: 50% 60%; background: #1a100a; }
+.hero__media::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(14, 8, 5, .9) 0%, rgba(14, 8, 5, .62) 22%, rgba(14, 8, 5, .18) 40%, transparent 52%),
+    linear-gradient(0deg, #1a100a 0%, rgba(26, 16, 10, .75) 10%, transparent 26%),
+    radial-gradient(60% 30% at 50% 16%, rgba(233, 196, 120, .16), transparent 70%);
+}
 .hero__langit {
   position: absolute; left: 0; right: 0; top: 0;
   padding: calc(11vh + env(safe-area-inset-top, 0px)) 20px 0;

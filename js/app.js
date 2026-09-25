@@ -110,6 +110,7 @@
         document.body.classList.remove('terkunci');
         window.scrollTo(0, 0);
         $('#muka').classList.add('muncul');
+        if (videoMuka) { try { videoMuka.currentTime = 0; } catch (e2) {} videoMuka.play().catch(function () {}); }
         kelopakAmbien = true;
       }, 1100 * cepat);
       setTimeout(function () { s.remove(); }, 2300 * cepat);
@@ -122,12 +123,20 @@
     var media = $('#heroMedia');
     if (C.heroVideo) {
       var v = el('video', 'hero__video');
-      v.src = C.heroVideo; v.muted = true; v.loop = true; v.autoplay = true;
-      v.setAttribute('playsinline', ''); v.setAttribute('aria-hidden', 'true');
+      v.muted = true; v.loop = true; v.preload = 'auto';
+      v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('aria-hidden', 'true');
       if (C.heroPoster) v.poster = C.heroPoster;
+      [[C.heroVideo, 'video/mp4'], [C.heroVideoWebm, 'video/webm']].forEach(function (x) {
+        if (!x[0]) return;
+        var so = document.createElement('source');
+        so.src = x[0]; so.type = x[1];
+        v.appendChild(so);
+      });
       media.textContent = '';
       media.appendChild(v);
-      v.play().catch(function () {});
+      videoMuka = v;
+      // Jika tiada sampul (cth. dibuka semula), terus main
+      if (!$('#sampul')) v.play().catch(function () {});
       return;
     }
     var NS = 'http://www.w3.org/2000/svg';
@@ -461,7 +470,7 @@
   }
 
   /* ---------- Kelopak emas jatuh ---------- */
-  var kelopakAmbien = false, sembur = [];
+  var kelopakAmbien = false, sembur = [], videoMuka = null;
   var WARNA = [['#f6e3a8', '#c9a45c'], ['#fff1c8', '#d9b86e'], ['#e8d29b', '#9c7a3c'], ['#f7eed6', '#d9c49a'], ['#d8b366', '#6b3f18']];
   function semburKelopak(x, y) {
     if (kurangGerak) return;
