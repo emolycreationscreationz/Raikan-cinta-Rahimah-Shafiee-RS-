@@ -346,12 +346,6 @@ button { font: inherit; color: inherit; cursor: pointer; }
 }
 .hero__langit .tarikh { margin-top: 10px; padding: 6px 16px; border-top: 1px solid rgba(236, 212, 154, .45); border-bottom: 1px solid rgba(236, 212, 154, .45); }
 .hero__media { transform-origin: 50% 60%; }
-.hero.muncul .hero__media { animation: zum-masuk 2.4s cubic-bezier(.2, .7, .2, 1) both; }
-.hero.muncul .hero__langit { animation: naik-masuk 1.6s .5s cubic-bezier(.2, .7, .2, 1) both; }
-.hero.muncul .hero__bunga { animation: bunga-masuk 1.6s .3s cubic-bezier(.2, .7, .2, 1) both; }
-@keyframes zum-masuk { from { transform: scale(1.12); opacity: 0; } to { transform: none; opacity: 1; } }
-@keyframes naik-masuk { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
-@keyframes bunga-masuk { from { transform: scale(.8); opacity: 0; } to { transform: none; opacity: 1; } }
 .hero__bunga {
   position: absolute; width: 50%; max-width: 230px; height: auto;
   filter: drop-shadow(0 6px 12px rgba(0, 0, 0, .6));

@@ -95,6 +95,7 @@
     function buka(e) {
       if (dibuka || (e && e.target.closest && e.target.closest('.bunga-malay'))) return;
       dibuka = true;
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
       mainMuzik();
       var m = $('#bukaJemputan').getBoundingClientRect();
       semburKelopak(m.left + m.width / 2, m.top + m.height / 2);
@@ -103,7 +104,7 @@
       lepas('masuk', 1100);        // sampul pudar ke muka depan
       setTimeout(function () {
         document.body.classList.remove('terkunci');
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
         $('#muka').classList.add('muncul');
         if (videoMuka) { try { videoMuka.currentTime = 0; } catch (e2) {} videoMuka.play().catch(function () {}); }
         kelopakAmbien = true;
@@ -559,6 +560,10 @@
   }
 
   /* ---------- Mula ---------- */
+  // Sentiasa mula di atas (elak pelayar memulihkan kedudukan skrol lama)
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
   isi();
   sampul();
   adegan();
