@@ -104,18 +104,15 @@
       var m = $('#bukaJemputan').getBoundingClientRect();
       semburKelopak(m.left + m.width / 2, m.top + m.height / 2);
       s.classList.add('tekan');
-      lepas('buka', 260);          // kepak terbuka
-      lepas('kepak-bawah', 820);   // kepak lepas 90°, ke belakang kad
-      lepas('keluar', 1250);       // kad naik keluar
-      lepas('masuk', 2450);        // sampul turun, bunga keluar
+      lepas('buka', 200);          // kepak terangkat bersama meterai
+      lepas('masuk', 1100);        // sampul pudar ke muka depan
       setTimeout(function () {
         document.body.classList.remove('terkunci');
         window.scrollTo(0, 0);
         $('#muka').classList.add('muncul');
-        s.classList.add('hilang');
         kelopakAmbien = true;
-      }, 2750 * cepat);
-      setTimeout(function () { s.remove(); }, 3700 * cepat);
+      }, 1100 * cepat);
+      setTimeout(function () { s.remove(); }, 2300 * cepat);
     }
     s.addEventListener('click', buka);
   }

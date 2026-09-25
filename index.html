@@ -309,48 +309,53 @@
   </defs>
 </svg>
 
-<!-- ============ Pembuka: sampul surat di atas baldu ============ -->
+<!-- ============ Pembuka: sampul surat skrin penuh ============ -->
 <div class="sampul" id="sampul">
-  <div class="sampul__latar"></div>
-  <div class="sampul__debu" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="sampul__badan"></div>
+  <svg class="sampul__lipat" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 100L50 56L100 100" fill="none" stroke="#000" stroke-opacity=".45" stroke-width="2" vector-effect="non-scaling-stroke"/>
+    <path d="M0 99.6L50 56.6L100 99.6" fill="none" stroke="#d4b067" stroke-opacity=".4" stroke-width="1" vector-effect="non-scaling-stroke"/>
+  </svg>
+  <div class="sampul__lapik"></div>
+  <div class="sampul__bayang"></div>
 
-  <svg class="bunga-malay sampul__bunga sampul__bunga--tl" viewBox="0 0 260 220" aria-hidden="true"><use href="#karangan" width="260" height="220"/></svg>
+  <svg class="bunga-malay sampul__bunga sampul__bunga--bl" viewBox="0 0 260 220" aria-hidden="true"><g transform="translate(0 220) scale(1 -1)"><use href="#karangan" width="260" height="220"/></g></svg>
   <svg class="bunga-malay sampul__bunga sampul__bunga--br" viewBox="0 0 260 220" aria-hidden="true"><g transform="translate(260 220) scale(-1 -1)"><use href="#karangan" width="260" height="220"/></g></svg>
 
-  <div class="sampul__atas">
-    <p class="sampul__kepada">Kepada Tetamu Yang Dihormati</p>
+  <div class="sampul__tulisan">
+    <p class="sampul__kecil">Kepada Tetamu Yang Dihormati</p>
+    <p class="sampul__nama" data-f="pasanganPendek"></p>
+    <p class="sampul__kecil" data-f="tarikhSampul"></p>
   </div>
+  <p class="sampul__hint">Sentuh meterai untuk buka</p>
 
-  <div class="surat" id="surat">
-    <div class="surat__bayang"></div>
-    <div class="surat__belakang"></div>
-    <div class="surat__kad">
-      <div class="surat__kad-dalam">
-        <svg class="surat__kad-bunga" viewBox="0 0 140 34" aria-hidden="true"><use href="#sprig" width="140" height="34"/></svg>
-        <p class="surat__kad-kecil">Walimatul Urus</p>
-        <p class="surat__kad-rs">RS</p>
-        <p class="surat__kad-nama" data-f="pasanganPendek"></p>
-        <p class="surat__kad-kecil" data-f="tarikhSampul"></p>
-      </div>
+  <div class="sampul__debu" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+  <div class="sampul__penutup" id="kepak">
+    <div class="sampul__kepak">
+      <div class="sampul__gelap"></div>
     </div>
-    <svg class="surat__poket" viewBox="0 0 100 70" preserveAspectRatio="none" aria-hidden="true">
-      <defs>
-        <linearGradient id="poketSisi" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3a2211"/><stop offset="1" stop-color="#4b2d17"/></linearGradient>
-        <linearGradient id="poketSisiK" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#321d0e"/><stop offset="1" stop-color="#452915"/></linearGradient>
-        <linearGradient id="poketBawah" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#2c190c"/><stop offset="1" stop-color="#553419"/></linearGradient>
-      </defs>
-      <path d="M0 0L47 37L0 70Z" fill="url(#poketSisi)"/>
-      <path d="M100 0L53 37L100 70Z" fill="url(#poketSisiK)"/>
-      <path d="M0 70L50 31L100 70Z" fill="url(#poketBawah)"/>
-      <path d="M0 70L50 31L100 70" fill="none" stroke="#e3c47f" stroke-width="1.2" vector-effect="non-scaling-stroke"/>
-      <path d="M0 0L47 37M100 0L53 37" fill="none" stroke="#000" stroke-opacity=".35" stroke-width="1" vector-effect="non-scaling-stroke"/>
-      <path d="M8 66L50 34.5L92 66" fill="none" stroke="#c9a45c" stroke-opacity=".45" stroke-width=".8" stroke-dasharray="3 3" vector-effect="non-scaling-stroke"/>
+    <svg class="sampul__tepi" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0L50 100L100 0" fill="none" stroke="#ecd49a" stroke-width="1.4" vector-effect="non-scaling-stroke"/><path d="M5 0L50 90L95 0" fill="none" stroke="#c9a45c" stroke-opacity=".55" stroke-width=".8" stroke-dasharray="3 3" vector-effect="non-scaling-stroke"/></svg>
+    <svg class="bunga-malay sampul__bunga sampul__bunga--tl" viewBox="0 0 260 220" aria-hidden="true"><use href="#karangan" width="260" height="220"/></svg>
+    <svg class="bunga-malay sampul__bunga sampul__bunga--tr" viewBox="0 0 260 220" aria-hidden="true"><g transform="translate(260 0) scale(-1 1)"><use href="#karangan" width="260" height="220"/></g></svg>
+    <svg class="bunga-malay sampul__jambak" viewBox="-130 -70 260 140" aria-hidden="true">
+      <use href="#daunR" transform="translate(-20 6) rotate(165) scale(1.6)"/>
+      <use href="#daunR" transform="translate(20 6) rotate(15) scale(1.6)"/>
+      <use href="#daunR" transform="translate(-16 16) rotate(140) scale(1.3)"/>
+      <use href="#daunR" transform="translate(16 16) rotate(40) scale(1.3)"/>
+      <use href="#daunR" transform="translate(-10 -12) rotate(-150) scale(1.2)"/>
+      <use href="#daunR" transform="translate(10 -12) rotate(-30) scale(1.2)"/>
+      <use href="#hortensia" fill="#f3e2c2" transform="translate(-58 4) scale(1.3)"/>
+      <use href="#hortensia" fill="#ecd8ae" transform="translate(58 4) scale(1.3)"/>
+      <use href="#mawar" fill="url(#gMawarEmas)" transform="translate(-86 -4) rotate(20) scale(1.05)"/>
+      <use href="#mawar" fill="url(#gMawar)" transform="translate(86 -4) rotate(-10) scale(1.05)"/>
+      <use href="#mawar" fill="url(#gMawarKuning)" transform="translate(-36 24) rotate(40) scale(.85)"/>
+      <use href="#mawar" fill="url(#gMawarEmas)" transform="translate(36 24) rotate(-30) scale(.85)"/>
+      <use href="#melur" transform="translate(-110 10) scale(1)"/><use href="#melur" transform="translate(110 10) scale(1)"/>
+      <use href="#melur" transform="translate(-66 -26) scale(.8)"/><use href="#melur" transform="translate(66 -26) scale(.8)"/>
+      <use href="#kuntum" transform="translate(-122 -8) rotate(-80)"/><use href="#kuntum" transform="translate(122 -8) rotate(80)"/>
     </svg>
-    <div class="surat__kepak" id="kepak">
-      <div class="surat__muka surat__muka--luar">
-        <div class="surat__kain"></div>
-        <svg class="surat__tepi" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0L50 100L100 0" fill="none" stroke="#ecd49a" stroke-width="1.3" vector-effect="non-scaling-stroke"/><path d="M5 0L50 88L95 0" fill="none" stroke="#c9a45c" stroke-opacity=".55" stroke-width=".8" stroke-dasharray="3 3" vector-effect="non-scaling-stroke"/></svg>
-        <button type="button" class="meterai" id="bukaJemputan" aria-label="Buka jemputan">
+    <button type="button" class="meterai" id="bukaJemputan" aria-label="Buka jemputan">
           <svg viewBox="-60 -60 120 120" aria-hidden="true">
             <defs>
               <radialGradient id="lilin" cx="-.25" cy="-.3" r="1.1">
@@ -380,14 +385,6 @@
             <ellipse class="meterai__kilau" cx="-18" cy="-24" rx="14" ry="6" fill="#fff8dc" opacity=".45" transform="rotate(-35 -18 -24)"/>
           </svg>
         </button>
-      </div>
-      <div class="surat__muka surat__muka--dalam"></div>
-    </div>
-  </div>
-
-  <div class="sampul__bawah">
-    <p class="sampul__nama" data-f="pasanganPendek"></p>
-    <p class="sampul__hint">Sentuh meterai untuk buka</p>
   </div>
 </div>
 
