@@ -36,7 +36,7 @@ Kosongkan `heroVideo` untuk kembali ke animasi lukisan.
 
 ## Muzik
 
-Letak fail MP3 sebagai `assets/music/lagu.mp3`. Muzik bermula bila tetamu tekan meterai.
+Muzik semasa: `assets/music/satu-shaf-di-belakangku.mp3` (bermula dari 0:27 lagu asal). Muzik bermula bila tetamu tekan meterai.
 Jika fail tiada, butang muzik akan disembunyikan secara automatik.
 
 ## RSVP & Guest Book (Google Sheets)

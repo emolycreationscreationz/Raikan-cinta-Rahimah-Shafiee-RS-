@@ -52,10 +52,10 @@ window.MAJLIS = {
 
   // --- Galeri (fokus = kedudukan gambar bila dipotong, "x% y%") ---
   galeri: [
-    { src: "assets/photos/foto-4.webp", fokus: "54% 50%", alt: "Rahimah dan Shafiee berdiri di hadapan pelamin" },
-    { src: "assets/photos/foto-1.webp", fokus: "50% 50%", alt: "Shafiee menyembunyikan sekuntum mawar untuk Rahimah" },
-    { src: "assets/photos/foto-2.webp", fokus: "46% 50%", alt: "Shafiee menghulurkan mawar kepada Rahimah" },
-    { src: "assets/photos/foto-3.webp", fokus: "47% 50%", alt: "Rahimah menunjukkan cincin" }
+    { src: "assets/photos/kenangan-1.webp", fokus: "52% 30%", alt: "Rahimah tersenyum di hadapan pelamin" },
+    { src: "assets/photos/kenangan-2.webp", fokus: "50% 35%", alt: "Rahimah bersama dua wanita tersayang di hadapan pelamin" },
+    { src: "assets/photos/kenangan-3.webp", fokus: "50% 10%", alt: "Shafiee tersenyum dengan sekuntum mawar" },
+    { src: "assets/photos/kenangan-4.webp", fokus: "50% 40%", alt: "Lukisan gaya 3D Rahimah bersama dua orang tersayang" }
   ],
 
   // --- Hubungi (PLACEHOLDER — tukar kepada nama & nombor sebenar) ---
@@ -73,8 +73,8 @@ window.MAJLIS = {
   heroPoster: "assets/video/pengantin-poster.jpg",
 
   // --- Muzik latar (fail MP3 dalam assets/music/) ---
-  muzik: "assets/music/river-flows-in-you.mp3",   // Yiruma - River Flows In You
-  muzikMula: 75.3,   // saat mula lagu (1:15 = tema utama kembali); 0 = dari awal
+  muzik: "assets/music/satu-shaf-di-belakangku.mp3",   // Arvian Dwi - Satu Shaf Di Belakangku (dipotong bermula 0:27)
+  muzikMula: 0,   // fail sudah bermula dari 0:27 lagu asal
 
   // --- RSVP & Guest Book (Google Sheets) ---
   // Tampal URL Web App Google Apps Script di sini. Kosong = mod demo.
