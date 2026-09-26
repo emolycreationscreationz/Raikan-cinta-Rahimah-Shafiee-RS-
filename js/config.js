@@ -33,7 +33,7 @@ window.MAJLIS = {
 
   // --- Lokasi ---
   tempat: {
-    nama: "Dewan Terbuka Kampung Mela",
+    nama: "Dewan Kampung Mela",
     alamat: "",                      // contoh: "Kampung Mela, 27200 Kuala Lipis, Pahang"
     mapsUrl: "https://maps.app.goo.gl/uwK9rxEqS2ZjjYYv5?g_st=ac",
     wazeUrl: ""                      // kosongkan jika tiada

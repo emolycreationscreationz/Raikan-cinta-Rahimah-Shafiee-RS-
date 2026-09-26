@@ -386,7 +386,7 @@
     { nama: 'Kak Long', kehadiran: 'Hadir', pax: 5, ucapan: 'Selamat pengantin baru adikku. Semoga dipermudahkan segala urusan.' },
     { nama: 'Hafiz', kehadiran: 'Tidak Hadir', pax: 1, ucapan: 'Tahniah buat kedua mempelai. Maaf tak dapat hadir, doakan semua berjalan lancar.' },
     { nama: 'Syazwani', kehadiran: 'Hadir', pax: 2, ucapan: 'Barakallahu lakuma wa baraka alaikuma. Congrats both of you!' },
-    { nama: 'Pak Ngah Mela', kehadiran: 'Hadir', pax: 4, ucapan: 'Semoga diberkati Allah selalu. Jumpa di Dewan Terbuka nanti.' }
+    { nama: 'Pak Ngah Mela', kehadiran: 'Hadir', pax: 4, ucapan: 'Semoga diberkati Allah selalu. Jumpa di Dewan Kampung Mela nanti.' }
   ];
   var KUNCI_DEMO = 'rs-rsvp-demo';
 
