@@ -66,7 +66,7 @@ window.MAJLIS = {
   ],
 
   // --- Video muka depan (pilihan) ---
-  // Video pengantin berjalan (potret, sudah digred warna emas-coklat).
+  // Video pembuka (potret): pintu gerbang emas terbuka, masjid, laluan mawar & cincin.
   // Kosongkan heroVideo untuk kembali ke animasi lukisan.
   heroVideo: "assets/video/pengantin.mp4",
   heroVideoWebm: "assets/video/pengantin.webm",   // sandaran untuk pelayar tanpa MP4
