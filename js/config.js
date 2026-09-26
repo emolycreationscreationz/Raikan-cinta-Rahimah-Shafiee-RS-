@@ -54,7 +54,7 @@ window.MAJLIS = {
   galeri: [
     { src: "assets/photos/kenangan-1.webp", fokus: "52% 30%", alt: "Rahimah tersenyum di hadapan pelamin" },
     { src: "assets/photos/kenangan-2.webp", fokus: "50% 35%", alt: "Rahimah bersama dua wanita tersayang di hadapan pelamin" },
-    { src: "assets/photos/kenangan-3.webp", fokus: "50% 10%", alt: "Shafiee tersenyum dengan sekuntum mawar" },
+    { src: "assets/photos/kenangan-3.webp", fokus: "50% 50%", alt: "Shafiee tersenyum dengan sekuntum mawar" },
     { src: "assets/photos/kenangan-4.webp", fokus: "50% 40%", alt: "Lukisan gaya 3D Rahimah bersama dua orang tersayang" }
   ],
 
